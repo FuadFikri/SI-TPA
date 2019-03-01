@@ -43,10 +43,10 @@
         <span class="oi oi-menu"></span>
       </button>
 
-      <input class="border-dark bg-primary-lighter form-control d-none d-md-block w-50 ml-3 mr-2" type="text" placeholder="Search" aria-label="Search">
+      <input class="border-dark bg-success-lighter form-control d-none d-md-block w-50 ml-3 mr-2" type="text" placeholder="Search" aria-label="Search">
       <div class="dropdown d-none d-md-block">
         @if(\Auth::user())
-        <button class="btn btn-link btn-link-primary dropdown-toggle" id="navbar-dropdown" data-toggle="dropdown">
+        <button class="btn btn-link btn-link-success dropdown-toggle" id="navbar-dropdown" data-toggle="dropdown">
           {{Auth::user()->name}}
         </button>
         @endif 
@@ -71,6 +71,9 @@
             <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
               <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" />
               <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
+              <li><a href="/home"><span class="oi oi-file"></span> Data Santri</a></li>
+              <li><a href="/home"><span class="oi oi-task"></span> Ujian</a></li>
+              <li><a href="/home"><span class="oi oi-key"></span> Kelola Akun</a></li>
 
               <div class="d-block d-md-none">
                   <div class="dropdown-divider"></div>
