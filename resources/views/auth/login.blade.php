@@ -49,7 +49,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-12">
-                                <button type="submit" class="btn-block btn btn-primary">
+                                <button type="submit" class="btn-block btn btn-success">
                                     {{ __('Login') }}
                                 </button>
                                 <br>
