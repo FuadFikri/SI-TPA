@@ -15,7 +15,8 @@ class CreateSantrisTable extends Migration
     {
         Schema::create('santris', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama');
+            $table->string('nama_lengkap');
+            $table->string('nama_panggilan');
             $table->date('tgl_lahir');
             $table->integer('RT');
             $table->integer('RW');
