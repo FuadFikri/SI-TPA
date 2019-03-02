@@ -29,12 +29,6 @@ class SantriController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
@@ -72,5 +66,10 @@ class SantriController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function get_import()
+    {
+        return view('santri.import');
     }
 }

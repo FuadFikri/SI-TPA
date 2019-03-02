@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
         <a href="{{route('santri.create')}}" class="btn btn-lg btn-outline-primary ">  Input</a>
-        <a href="{{route('santri.create')}}" class="btn btn-lg btn-light">  Import </a>
+        <a href="{{url('santri/import')}}" class="btn btn-lg btn-light">  Import </a>
     <div class="row justify-content-center">
         <h4>Data</h4>
         <table class="table table-hover">
