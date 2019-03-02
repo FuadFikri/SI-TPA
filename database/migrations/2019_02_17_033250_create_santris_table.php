@@ -22,12 +22,15 @@ class CreateSantrisTable extends Migration
             $table->integer('RW');
             $table->integer('no_rumah')->nullable();
             $table->string('url_foto')->nullable();
-            $table->string('sekolah');
+            $table->integer('sekolah_id')->unsigned()->nullable();
             $table->string('tahun_masuk_tpa');
             $table->string('nama_orang_tua');
             $table->string('jenis_kelamin');
+            $table->integer('isActive')->nullable();
+            $table->integer('isComplete')->nullable();
             $table->integer('kelas_id')->unsigned()->nullable();
             $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('set null');
+            $table->foreign('sekolah_id')->references('id')->on('sekolahs')->onDelete('set null');
             $table->timestamps();
         });
     }
