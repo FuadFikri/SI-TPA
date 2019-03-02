@@ -3,31 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Services\SantriService;
 class SantriController extends Controller
 {
     
+    protected $santriService;
+
+    public function __construct(SantriService $santriService)
+    {
+        $this->santriService = $santriService;
+    }
     public function index()
     {
-        return view('santri.index');
+        $santris = $this->santriService->getPaginate(10);
+        return view('santri.index', ['santris'=>$santris]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('santri.add');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
