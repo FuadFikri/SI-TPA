@@ -43,7 +43,9 @@
         <span class="oi oi-menu"></span>
       </button>
 
-      <input class="border-dark bg-success-lighter form-control d-none d-md-block w-50 ml-3 mr-2" type="text" placeholder="Search" aria-label="Search">
+      <span class="border-light bg-success-lighter  d-none d-md-block w-50 ml-3 mr-2" >
+        Lorem ipsum dolor sit amet consectetur,
+      </span>
       <div class="dropdown d-none d-md-block">
         @if(\Auth::user())
         <button class="btn btn-link btn-link-success dropdown-toggle" id="navbar-dropdown" data-toggle="dropdown">
@@ -69,9 +71,9 @@
         <div class="polished-sidebar bg-light col-12 col-md-3 col-lg-2 p-0 collapse d-md-inline" id="sidebar-nav">
 
             <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
-              <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" />
+              {{-- <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" /> --}}
               <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
-              <li><a href="/home"><span class="oi oi-file"></span> Data Santri</a></li>
+            <li><a href="{{route('santri.index')}}"><span class="oi oi-file"></span> Data Santri</a></li>
               <li><a href="/home"><span class="oi oi-task"></span> Ujian</a></li>
               <li><a href="/home"><span class="oi oi-key"></span> Kelola Akun</a></li>
 
