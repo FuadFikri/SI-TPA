@@ -22,5 +22,9 @@ class SantriService
         return $this->santriRepository->getPaginate($num)
                 ->sortBy('nama_panggilan');
     }
+    public function store($request)
+    {
+        return $this->santriRepository->store($request);
+    }
 
 }

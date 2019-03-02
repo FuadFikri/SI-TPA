@@ -26,7 +26,7 @@ class SantriController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $this->santriService->store($request);
     }
 
     public function show($id)
