@@ -32,15 +32,24 @@
                 <div class="row">
                     <div class="col-md-2 mb-3">
                         <label for="#">RT</label>
-                        <input type="number" class="form-control" name="RT" required>
+                        <select class="form-control" id="" name="RT">
+                            @for ($i = 1; $i < 14; $i++)
+                                <option value="{{$i}}">{{$i}}</option>    
+                            @endfor
+                        </select>
                     </div>
                     <div class="col-md-2 mb-3">
                         <label for="#">RW</label>
-                        <input type="number" class="form-control" name="RW" required>
+                        <select class="form-control" id="" name="RW">
+                            <option value="45">45</option>    
+                            <option value="46">46</option>    
+                            <option value="47">47</option>    
+                            <option value="48">48</option>    
+                        </select>
                     </div>
                     <div class="col-md-2 mb-3">
                         <label for="#">No.Rumah</label>
-                        <input type="number" class="form-control" name="no_rumah" required>
+                        <input type="number" class="form-control" name="no_rumah" >
                     </div>
                 </div>
                 <div class="form-group">
@@ -49,7 +58,11 @@
                 </div>
                 <div class="form-group">
                     <label for="#">Sekolah</label>
-                    <input type="text" class="form-control" name="sekolah">
+                    <select class="form-control" id="" name="sekolah">
+                        @foreach ($daftar_sekolah as $item)
+                            <option value="{{$item->id}}">{{$item->nama}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="#">Tahun Masuk TPA</label>
@@ -58,9 +71,9 @@
                 <div class="form-group">
                     <label>Kelas TPA</label>
                     <select class="form-control" id="" name="kls_tpa">
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 2</option>
+                        @foreach ($daftar_kelas as $item)
+                            <option value="{{$item->id}}">{{$item->nama}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <input type="hidden" name="inputBy" value="">
