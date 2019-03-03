@@ -11,6 +11,10 @@ class Santri extends Model
     {
         return $this->belongsTo('App\Kelas');
     }
+    public function sekolah()
+    {
+        return $this->belongsTo('App\Sekolah');
+    }
     public function materis()
     {
         return $this->hasMany('App\Materi','ujians');
