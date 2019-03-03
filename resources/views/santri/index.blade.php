@@ -12,17 +12,19 @@
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Kelas</th>
+                    <th scope="col">Sekolah</th>
                     <th scope="col">RT</th>
                     <th scope="col">Wali</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($santris as $santri)
+                @foreach($daftar_santri as $santri)
                 <tr>
                     <th>{{$santri->id}}</th>
                     <td>{{$santri->nama_panggilan}}</td>
                     <td>{{$santri->kelas->nama}}</td>
+                    <td>{{$santri->sekolah->nama}}</td>
                     <td>{{$santri->RT}}</td>
                     <td>{{$santri->nama_orang_tua}}</td>
                     <td>
