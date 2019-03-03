@@ -4,29 +4,40 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\SantriService;
+use App\Services\SekolahService;
+use App\Services\KelasService;
 class SantriController extends Controller
 {
     
     protected $santriService;
+    protected $sekolahService;
+    protected $kelasService;
 
-    public function __construct(SantriService $santriService)
+    public function __construct(SantriService $santriService, 
+                                SekolahService $sekolahService,
+                                KelasService $kelasService )
     {
         $this->santriService = $santriService;
+        $this->sekolahService = $sekolahService;
+        $this->kelasService = $kelasService;
     }
     public function index()
     {
-        $santris = $this->santriService->getPaginate(10);
-        return view('santri.index', ['santris'=>$santris]);
+        $daftar_santri = $this->santriService->getPaginate(10);
+        return view('santri.index', compact('daftar_santri'));
     }
 
     public function create()
     {
-        return view('santri.add');
+        $daftar_sekolah = $this->sekolahService->getAll();
+        $daftar_kelas = $this->kelasService->getAll();
+        return view('santri.add',compact('daftar_sekolah','daftar_kelas'));
     }
 
     public function store(Request $request)
     {
-        $this->santriService->store($request);
+        $newSantri = $this->santriService->store($request);
+        if($newSantri)echo "success";
     }
 
     public function show($id)

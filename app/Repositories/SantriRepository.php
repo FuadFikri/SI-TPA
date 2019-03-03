@@ -11,7 +11,7 @@ class SantriRepository
     {
         $this->model = $santri;
     }
-    public function getAll()
+    public function index()
     {
         return $this->model::all();
     }
@@ -32,14 +32,14 @@ class SantriRepository
             'RT' => $request->RT,
             'RW' => $request->RW,
             'no_rumah' => $request->no_rumah,
-            'sekolah' => $request->sekolah,
+            'sekolah_id' => $request->sekolah,
             'tahun_masuk_tpa' => $request->thn_masuk,
             'nama_orang_tua' => $request->wali,
             'jenis_kelamin' => $request->jenis_klm,
             'kelas_id' => $request->kls_tpa,
             'isActive' => 1,
         ]);
-        dd($newSantri);
+        return $newSantri;
     }
 
     public function update($request)

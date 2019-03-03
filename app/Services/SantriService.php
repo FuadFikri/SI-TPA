@@ -15,7 +15,7 @@ class SantriService
 
     public function getAll()
     {
-        return $this->santriRepository->getAll();
+        return $this->santriRepository->index();
     }
     public function getPaginate($num)
     {
