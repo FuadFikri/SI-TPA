@@ -23,8 +23,6 @@ class SantriRepository
 
     public function store($request)
     {
-
-        
         $newSantri = $this->model::insert([
             'nama_lengkap' => $request->nama_lengkap,
             'nama_panggilan' => $request->nama_panggilan,
@@ -46,6 +44,18 @@ class SantriRepository
     {
         $santri = $this->model::find($request->id);
         dd($santri);
+    }
+
+    public function show($id)
+    {
+        $santri = $this->model::find($id);
+        return $santri;
+    }
+    public function delete($id)
+    {
+        $santri = $this->model::find($id);
+        $santri->destroy();
+        return $santri;
     }
 
     

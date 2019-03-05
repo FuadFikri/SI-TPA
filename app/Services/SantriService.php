@@ -26,5 +26,9 @@ class SantriService
     {
         return $this->santriRepository->store($request);
     }
+    public function showDetail($id)
+    {
+        return $this->santriRepository->show($id);
+    }
 
 }
