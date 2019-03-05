@@ -19,9 +19,9 @@
                     </div>
                 </div>
                 <label class="mt-4" for="">Jenis Kelamin</label> <br>
-                <input type="radio"  id="rd1" name="jenis_klm"> <label for="rd1">Laki-laki</label>
+                <input type="radio"  id="rd1" name="jenis_klm" value="laki-laki"> <label for="rd1">Laki-laki</label>
                 <br>
-                <input type="radio"  id="rd2" name="jenis_klm"> <label for="rd2">Perempuan</label>
+                <input type="radio"  id="rd2" name="jenis_klm" value="perempuan"> <label for="rd2">Perempuan</label>
                 <br>
                 <div class="row">
                     <div class="col-md-4 mb-3">

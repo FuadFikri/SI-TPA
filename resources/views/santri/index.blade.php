@@ -28,8 +28,8 @@
                     <td>{{$santri->RT}}</td>
                     <td>{{$santri->nama_orang_tua}}</td>
                     <td>
-                        <a href="" class="btn btn-outline-success btn-sm">Detail</a>
-                        <a href="" class="btn btn-outline-warning btn-sm">Sunting</a>
+                        <a href="{{url('santri/'.$santri->id)}}" class="btn btn-outline-success btn-sm">Detail</a>
+                        <a href="{{url('santri/'.$santri->id.'/edit')}}" class="btn btn-outline-warning btn-sm">Sunting</a>
                         <form method="POST" class="d-inline" onsubmit="return confirm('Yakin akan di hapus?')" action="">
                             @csrf
                             <input type="hidden" value="DELETE" name="_method">

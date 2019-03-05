@@ -30,5 +30,9 @@ class SantriService
     {
         return $this->santriRepository->show($id);
     }
+    public function edit($id)
+    {
+        return $this->santriRepository->show($id);
+    }
 
 }

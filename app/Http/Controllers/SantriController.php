@@ -43,21 +43,16 @@ class SantriController extends Controller
     public function show($id)
     {
         $santri = $this->santriService->showDetail($id);
-        return $santri;
+        // dd($santri);
+        return view('santri.show',compact('santri'));
     }
 
     public function edit($id)
     {
-        //
+        $santri = $this->santriService->edit($id);
+        dd($santri);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
