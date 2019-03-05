@@ -10,7 +10,11 @@ class Santri extends Model
     
     public function isActive()
     {
-        return $this->isActive == 1 ? true : false ;;
+        return $this->isActive == 1 ? true : false ;
+    }
+    public function isComplete()
+    {
+        return $this->isComplete == 1 ? true : false ;
     }
     
     
