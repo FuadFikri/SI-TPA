@@ -10,7 +10,9 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <img src="i.png" alt="" srcset="">
+                        <img src="{{asset('storage/'.$santri->url_foto)}}" class="w-50 mb-2">
+                    </div>
+                    <div class="row">
                         <h4>{{$santri->nama_lengkap}}</h4>
                     </div>
                     <div class="row">
