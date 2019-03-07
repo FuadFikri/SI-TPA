@@ -20,7 +20,7 @@ class SantriService
     public function getPaginate($num)
     {
         return $this->santriRepository->getPaginate($num)
-                ->sortBy('nama_panggilan');
+                    ->sortBy('nama_panggilan');
     }
     public function store($request)
     {
@@ -33,6 +33,10 @@ class SantriService
     public function edit($id)
     {
         return $this->santriRepository->show($id);
+    }
+    public function update($request, $id)
+    {
+        return $this->santriRepository->update($request, $id);
     }
 
 }
