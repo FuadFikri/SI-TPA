@@ -29,8 +29,8 @@ class SantriController extends Controller
 
     public function create()
     {
-        $daftar_sekolah = $this->sekolahService->getAll();
-        $daftar_kelas = $this->kelasService->getAll();
+        $daftar_sekolah = $this->getDaftarSekolah();
+        $daftar_kelas = $this->getDaftarKelas();
         return view('santri.add',compact('daftar_sekolah','daftar_kelas'));
     }
 
@@ -50,14 +50,20 @@ class SantriController extends Controller
     public function edit($id)
     {
         $santri = $this->santriService->edit($id);
-        dd($santri);
+        $daftar_sekolah = $this->getDaftarSekolah();
+        $daftar_kelas = $this->getDaftarKelas();
+        return view('santri.edit',compact('daftar_sekolah','daftar_kelas','santri'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        dd($this->santriService->update($request, $id));
+        // dd($id);
+        // if($request->file('avatar')){
+        //     $file = $request->file('avatar')->store('avatars', 'public');
+        //     $new_user->avatar = $file;
+        // }
     }
-
 
     public function destroy($id)
     {
@@ -67,5 +73,14 @@ class SantriController extends Controller
     public function get_import()
     {
         return view('santri.import');
+    }
+
+    private function getDaftarSekolah()
+    {
+        return $this->sekolahService->getAll();
+    }
+    private function getDaftarKelas()
+    {
+        return $this->kelasService->getAll();
     }
 }
