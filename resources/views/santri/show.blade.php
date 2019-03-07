@@ -11,12 +11,12 @@
                 <div class="card-body">
                     <div class="row">
                         <img src="i.png" alt="" srcset="">
-                        <h4>nama</h4>
+                        <h4>{{$santri->nama_lengkap}}</h4>
                     </div>
                     <div class="row">
-                        
+
                         <ul>
-                        <li>nama panggilan : <b>{{$santri->nama_panggilan}}</b></li>
+                            <li>nama panggilan : <b>{{$santri->nama_panggilan}}</b></li>
                             <li>tanggal lahir: <b>{{$santri->tgl_lahir}}</b> </li>
                             <li>{{$santri->jenis_kelamin}} </li>
                             <li>RT/RW : <b>{{$santri->RT}}/{{$santri->RW}}</b> </li>
@@ -25,7 +25,7 @@
                             <li>masuk TPA tahun : <b>{{$santri->tahun_masuk_tpa}}</b> </li>
                             <li>nama orang tua : <b>{{$santri->nama_orang_tua}}</b> </li>
                             <li>di TPA kelas : <b>{{$santri->kelas->nama}}</b> </li>
-                            <li>Masih aktif ? : <b> {{ $santri->isActive()? "aktif" : "tidak"}}  </b> </li>
+                            <li>Masih aktif ? : <b> {{ $santri->isActive()? "aktif" : "tidak"}} </b> </li>
                         </ul>
                     </div>
                 </div>
