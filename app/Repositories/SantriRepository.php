@@ -23,7 +23,7 @@ class SantriRepository
     public function store($request)
     {
         $data = $this->data($request);
-        $newSantri = $this->model::insert($data);
+        $newSantri = $this->model::create($data);
         return $newSantri;
     }
 
@@ -32,6 +32,8 @@ class SantriRepository
         $santri = $this->model::find($id);
         $data = $this->data($request);
         $santri->update($data);
+        $santri->url_foto= $this->uploadFoto($request);
+        $santri->save();
         return $santri;
     }
 
@@ -63,6 +65,16 @@ class SantriRepository
                 'isActive' => $request->isActive
         ];
         return $data;
+    }
+
+    public function uploadFoto($request)
+    {
+        if($request->file('avatar')){
+            $file = $request->file('avatar')->store('avatars', 'public');
+            return $file;
+        }
+        return null;
+        
     }
 
     
