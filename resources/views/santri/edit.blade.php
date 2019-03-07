@@ -79,7 +79,7 @@
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input type="file" class="form-control" name="avatar" id="ava">
+                    <input type="file" class="form-control" name="avatar">
                 </div>
                 <label class="mt-4" for="">Status</label> <br>
                 <input type="radio"  id="rd1" name="isActive"   value="1" {{ $santri->isActive==1? "checked" : "" }}> <label for="rd1">Aktif</label>
