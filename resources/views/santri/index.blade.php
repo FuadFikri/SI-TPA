@@ -19,9 +19,12 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $i=1;
+                @endphp
                 @foreach($daftar_santri as $santri)
                 <tr>
-                    <th>{{$santri->id}}</th>
+                    <th>{{$i++}}</th>
                     <td>{{$santri->nama_panggilan}}</td>
                     <td>{{$santri->kelas->nama}}</td>
                     <td>{{$santri->sekolah->nama}}</td>
@@ -39,28 +42,10 @@
                 </tr>
                 @endforeach
             </tbody>
-            <!-- <tfoot>
-                <tr>
-                    <td>
-                        <nav aria-label="...">
-                            <ul class="pagination ">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active bg-success-darker">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </td>
-                </tr>
-            </tfoot> -->
         </table>
+        <ul class="pagination ">
+            {{ $daftar_santri->links() }}
+        </ul>
     </div>
 </div>
 @endsection

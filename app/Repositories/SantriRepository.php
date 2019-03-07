@@ -15,10 +15,6 @@ class SantriRepository
     {
         return $this->model::all();
     }
-    public function getPaginate($num)
-    {
-        return $this->model::simplePaginate($num);
-    }
 
     public function store($request)
     {
@@ -32,8 +28,6 @@ class SantriRepository
         $santri = $this->model::find($id);
         $data = $this->data($request);
         $santri->update($data);
-        $santri->url_foto= $this->uploadFoto($request);
-        $santri->save();
         return $santri;
     }
 

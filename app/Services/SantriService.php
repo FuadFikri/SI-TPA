@@ -17,11 +17,6 @@ class SantriService
     {
         return $this->santriRepository->index();
     }
-    public function getPaginate($num)
-    {
-        return $this->santriRepository->getPaginate($num)
-                    ->sortBy('nama_panggilan');
-    }
     public function store($request)
     {
         return $this->santriRepository->store($request);
@@ -36,7 +31,10 @@ class SantriService
     }
     public function update($request, $id)
     {
-        return $this->santriRepository->update($request, $id);
+        $santriUpdated = $this->santriRepository->update($request, $id);
+        $santriUpdated->url_foto= $this->santriRepository->uploadFoto($request);
+        $santriUpdated->save();
+        return $santriUpdated;
     }
 
 }

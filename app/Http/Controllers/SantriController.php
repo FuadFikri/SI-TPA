@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Services\SantriService;
 use App\Services\SekolahService;
 use App\Services\KelasService;
+use App\Santri;
 class SantriController extends Controller
 {
     
@@ -23,7 +24,9 @@ class SantriController extends Controller
     }
     public function index()
     {
-        $daftar_santri = $this->santriService->getPaginate(10);
+        $daftar_santri = Santri::where('id', '>' ,0 )
+                        ->orderBy('nama_panggilan','asc')
+                        ->paginate(5);
         return view('santri.index', compact('daftar_santri'));
     }
 
@@ -57,12 +60,10 @@ class SantriController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($this->santriService->update($request, $id));
-        // dd($id);
-        // if($request->file('avatar')){
-        //     $file = $request->file('avatar')->store('avatars', 'public');
-        //     $new_user->avatar = $file;
-        // }
+        $new = $this->santriService->update($request, $id);
+        if ($new) {
+            echo "updated";
+        }
     }
 
     public function destroy($id)
