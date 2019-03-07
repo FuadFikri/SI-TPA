@@ -18,32 +18,21 @@ class SantriRepository
     public function getPaginate($num)
     {
         return $this->model::simplePaginate($num);
-            
     }
 
     public function store($request)
     {
-        $newSantri = $this->model::insert([
-            'nama_lengkap' => $request->nama_lengkap,
-            'nama_panggilan' => $request->nama_panggilan,
-            'tgl_lahir' => $request->tgl_lahir,
-            'RT' => $request->RT,
-            'RW' => $request->RW,
-            'no_rumah' => $request->no_rumah,
-            'sekolah_id' => $request->sekolah,
-            'tahun_masuk_tpa' => $request->thn_masuk,
-            'nama_orang_tua' => $request->wali,
-            'jenis_kelamin' => $request->jenis_klm,
-            'kelas_id' => $request->kls_tpa,
-            'isActive' => 1,
-        ]);
+        $data = $this->data($request);
+        $newSantri = $this->model::insert($data);
         return $newSantri;
     }
 
-    public function update($request)
+    public function update($request,$id)
     {
-        $santri = $this->model::find($request->id);
-        dd($santri);
+        $santri = $this->model::find($id);
+        $data = $this->data($request);
+        $santri->update($data);
+        return $santri;
     }
 
     public function show($id)
@@ -56,6 +45,24 @@ class SantriRepository
         $santri = $this->model::find($id);
         $santri->destroy();
         return $santri;
+    }
+
+    public function data($request)
+    {
+        $data = ['nama_lengkap' => $request->nama_lengkap,
+                'nama_panggilan' => $request->nama_panggilan,
+                'tgl_lahir' => $request->tgl_lahir,
+                'RT' => $request->RT,
+                'RW' => $request->RW,
+                'no_rumah' => $request->no_rumah,
+                'sekolah_id' => $request->sekolah,
+                'tahun_masuk_tpa' => $request->thn_masuk,
+                'nama_orang_tua' => $request->wali,
+                'jenis_kelamin' => $request->jenis_klm,
+                'kelas_id' => $request->kls_tpa,
+                'isActive' => $request->isActive
+        ];
+        return $data;
     }
 
     
