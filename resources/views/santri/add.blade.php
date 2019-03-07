@@ -76,6 +76,11 @@
                         @endforeach
                     </select>
                 </div>
+                <label class="mt-4" for="">Status</label> <br>
+                <input type="radio"  name="isActive"   value="1"> <label for="rd1">Aktif</label>
+                <br>
+                <input type="radio"   name="isActive" value="0"> <label for="rd2">Tidak Aktif</label>
+                <br>
                 <input type="hidden" name="inputBy" value="">
                 <br>
                 <div class="form-group" style="float: right;">
