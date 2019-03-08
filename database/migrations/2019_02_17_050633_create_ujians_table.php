@@ -15,13 +15,10 @@ class CreateUjiansTable extends Migration
     {
         Schema::create('ujians', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('santri_id')->unsigned();
-            $table->integer('materi_id')->unsigned();
-            $table->integer('nilai');
-            $table->text('deskripsi');
-            $table->string('penguji');
-            $table->foreign('santri_id')->references('id')->on('santris');
-            $table->foreign('materi_id')->references('id')->on('materis');
+            $table->enum('semester',['ganjil','genap']);
+            $table->integer('tahun');
+            $table->string('keterangan')->nulable();
+            $table->integer('status');
             $table->timestamps();
         });
     }

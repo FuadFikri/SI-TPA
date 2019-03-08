@@ -17,4 +17,23 @@ class KelasService
     {
         return $this->kelasRepository->index();
     }
+
+    public function store($request)
+    {
+        return $this->KelasRepository->store($request);
+    }
+    public function showDetail($id)
+    {
+        return $this->KelasRepository->show($id);
+    }
+    public function edit($id)
+    {
+        return $this->KelasRepository->show($id);
+    }
+    public function update($request, $id)
+    {
+        return $this->KelasRepository->update($request, $id);
+        
+    }
+
 }
