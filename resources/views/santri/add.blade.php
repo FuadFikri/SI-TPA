@@ -76,10 +76,10 @@
                         @endforeach
                     </select>
                 </div>
-                <label class="mt-4" for="">Status</label> <br>
-                <input type="radio"  name="isActive"   value="1"> <label for="rd1">Aktif</label>
+                <label class="mt-4" for="">Status</label><br>
+                <input type="radio"  id="rd3" name="isActive"   value="1"> <label for="rd3">Aktif</label>
                 <br>
-                <input type="radio"   name="isActive" value="0"> <label for="rd2">Tidak Aktif</label>
+                <input type="radio" id="rd4"  name="isActive" value="0"> <label for="rd4">Tidak Aktif</label>
                 <br>
                 <input type="hidden" name="inputBy" value="">
                 <br>

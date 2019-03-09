@@ -37,4 +37,9 @@ class SantriService
         return $santriUpdated;
     }
 
+    public function delete($id)
+    {
+        return $this->santriRepository->delete($id);
+    }
+
 }

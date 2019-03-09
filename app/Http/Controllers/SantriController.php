@@ -40,7 +40,9 @@ class SantriController extends Controller
     public function store(Request $request)
     {
         $newSantri = $this->santriService->store($request);
-        if($newSantri)echo "success";
+        if($newSantri){
+            return redirect()->route('santri.index')->with('status','data berhasil ditambahkan');
+        }
     }
 
     public function show($id)
@@ -60,15 +62,18 @@ class SantriController extends Controller
 
     public function update(Request $request, $id)
     {
-        $new = $this->santriService->update($request, $id);
-        if ($new) {
-            echo "updated";
+        $santriUpdated = $this->santriService->update($request, $id);
+        if($santriUpdated){
+            return redirect()->route('santri.index')->with('status','data berhasil diperbaharui');
         }
     }
 
     public function destroy($id)
     {
-        //
+        $santri = $this->santriService->delete($id);
+        if($santri){
+            return redirect()->route('santri.index')->with('status','data berhasil dihapus');
+        }
     }
 
     public function get_import()

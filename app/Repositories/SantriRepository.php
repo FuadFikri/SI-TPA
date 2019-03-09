@@ -25,7 +25,7 @@ class SantriRepository
 
     public function update($request,$id)
     {
-        $santri = $this->model::find($id);
+        $santri = $this->model::findOrFail($id);
         $data = $this->data($request);
         $santri->update($data);
         return $santri;
@@ -33,13 +33,13 @@ class SantriRepository
 
     public function show($id)
     {
-        $santri = $this->model::find($id);
+        $santri = $this->model::findOrFail($id);
         return $santri;
     }
     public function delete($id)
     {
-        $santri = $this->model::find($id);
-        $santri->destroy();
+        $santri = $this->model::findOrFail($id);
+        $santri->delete();
         return $santri;
     }
 

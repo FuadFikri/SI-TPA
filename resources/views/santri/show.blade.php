@@ -10,7 +10,9 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <img src="{{asset('storage/'.$santri->url_foto)}}" class="w-50 mb-2">
+                        @if ($santri->url_foto)
+                            <img src="{{asset('storage/'.$santri->url_foto)}}" class="w-50 mb-2">
+                        @endif
                     </div>
                     <div class="row">
                         <h4>{{$santri->nama_lengkap}}</h4>

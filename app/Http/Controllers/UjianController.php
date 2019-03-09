@@ -1,82 +1,53 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Services\UjianService;
+use App\Ujian;
 use Illuminate\Http\Request;
 
 class UjianController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $ujianService;
+    public function __construct(UjianService $ujianService)
+    {
+        $this->ujianService = $ujianService;
+    }
     public function index()
     {
-        //
+        $daftar_ujian = Ujian::where('id', '>' ,0 )
+                                ->orderBy('created_at','desc')
+                                ->paginate(5);
+        return view('ujian.index',compact('daftar_ujian'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('ujian.add');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $newUjian = $this->ujianService->store($request);
+        if($newUjian){
+            return redirect()->route('ujian.index')->with('status','data berhasil ditambahkan');
+        }
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $ujian = $this->ujianService->edit($id);
+        return view('ujian.edit',compact('ujian'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $ujianUpdated = $this->ujianService->update($request, $id);
+        if($ujianUpdated){
+            return redirect()->route('ujian.index')->with('status','data berhasil diperbaharui');
+        }
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

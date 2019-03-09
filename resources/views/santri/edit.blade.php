@@ -3,7 +3,7 @@
 <div class="col-lg-9">
     <div class="card">
         <div class="card-header bg-white pb-1">
-            <h5>Input Data Santri</h5>
+            <h5>Edit Data Santri</h5>
         </div>
         <div class="card-body">
             <form action="{{ route('santri.update',$santri->id) }}" method="POST" enctype="multipart/form-data">
@@ -82,9 +82,9 @@
                     <input type="file" class="form-control" name="avatar">
                 </div>
                 <label class="mt-4" for="">Status</label> <br>
-                <input type="radio"  id="rd1" name="isActive"   value="1" {{ $santri->isActive==1? "checked" : "" }}> <label for="rd1">Aktif</label>
+                <input type="radio"  id="rd3" name="isActive"   value="1" {{ $santri->isActive==1? "checked" : "" }}> <label for="rd3">Aktif</label>
                 <br>
-                <input type="radio"  id="rd2" name="isActive" value="0" {{ $santri->isActive==0? "checked" : "" }}> <label for="rd2">Tidak Aktif</label>
+                <input type="radio"  id="rd4" name="isActive" value="0" {{ $santri->isActive==0? "checked" : "" }}> <label for="rd4">Tidak Aktif</label>
                 <br>
                 <input type="hidden" name="inputBy" value="">
                 <br>
