@@ -74,7 +74,7 @@
               {{-- <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" /> --}}
               <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
             <li><a href="{{route('santri.index')}}"><span class="oi oi-file"></span> Data Santri</a></li>
-              <li><a href="/home"><span class="oi oi-task"></span> Ujian</a></li>
+            <li><a href="{{route('ujian.index')}}"><span class="oi oi-task"></span> Ujian</a></li>
               <li><a href="/home"><span class="oi oi-key"></span> Kelola Akun</a></li>
 
               <div class="d-block d-md-none">
