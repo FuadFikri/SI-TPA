@@ -48,7 +48,6 @@ class SantriController extends Controller
     public function show($id)
     {
         $santri = $this->santriService->showDetail($id);
-        // dd($santri);
         return view('santri.show',compact('santri'));
     }
 

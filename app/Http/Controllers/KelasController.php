@@ -32,7 +32,9 @@ class KelasController extends Controller
     public function store(Request $request)
     {
         $newkelas = $this->kelasService->store($request);
-        if($newkelas)echo "success";
+        if($newkelas){
+            return redirect()->route('kelas.index')->with('status','data berhasil ditambahkan');
+        }
     }
 
     public function show($id)

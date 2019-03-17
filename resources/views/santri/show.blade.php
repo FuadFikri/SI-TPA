@@ -11,7 +11,18 @@
                 <div class="card-body">
                     <div class="row">
                         @if ($santri->url_foto)
-                            <img src="{{asset('storage/'.$santri->url_foto)}}" class="w-50 mb-2">
+                        <img src="{{asset('storage/'.$santri->url_foto)}}" class="w-50 mb-2">
+                        @else
+                        <div class="col-lg-3">
+
+                            <div class="card">
+                                <div class="card-header bg-black pb-1">
+                                    <div class="oi oi-file"></div>
+                                </div>
+                                <i>belum ada foto</i>
+                                <a href="{{route('santri.edit',$santri->id)}}"> <u>upload foto</u></a>
+                            </div>
+                        </div>
                         @endif
                     </div>
                     <div class="row">

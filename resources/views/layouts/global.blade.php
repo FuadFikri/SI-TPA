@@ -75,7 +75,7 @@
               <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
             <li><a href="{{route('santri.index')}}"><span class="oi oi-file"></span> Data Santri</a></li>
             <li><a href="{{route('ujian.index')}}"><span class="oi oi-task"></span> Ujian</a></li>
-              <li><a href="/home"><span class="oi oi-key"></span> Kelola Akun</a></li>
+              <li><a href="{{route('user.index')}}"><span class="oi oi-key"></span> Kelola Akun</a></li>
 
               <div class="d-block d-md-none">
                   <div class="dropdown-divider"></div>
