@@ -3,7 +3,7 @@
 namespace App\Repositories;
 use App\Santri;
 use Illuminate\Database\Eloquent\Model;
-class SantriRepository
+class SantriRepository extends CrudRepository
 {
     protected $model;
 
@@ -11,38 +11,6 @@ class SantriRepository
     {
         $this->model = $santri;
     }
-    public function index()
-    {
-        return $this->model::all();
-    }
-
-    public function store($request)
-    {
-        $data = $this->data($request);
-        $newSantri = $this->model::create($data);
-        return $newSantri;
-    }
-
-    public function update($request,$id)
-    {
-        $santri = $this->model::findOrFail($id);
-        $data = $this->data($request);
-        $santri->update($data);
-        return $santri;
-    }
-
-    public function show($id)
-    {
-        $santri = $this->model::findOrFail($id);
-        return $santri;
-    }
-    public function delete($id)
-    {
-        $santri = $this->model::findOrFail($id);
-        $santri->delete();
-        return $santri;
-    }
-
     public function data($request)
     {
         $data = ['nama_lengkap' => $request->nama_lengkap,
@@ -70,7 +38,6 @@ class SantriRepository
         return null;
         
     }
-
     
 }
 

@@ -3,45 +3,13 @@
 namespace App\Repositories;
 use App\Kelas;
 use Illuminate\Database\Eloquent\Model;
-class KelasRepository
+class KelasRepository extends CrudRepository
 {
     protected $model;
 
     public function __construct(Kelas $kelas)
     {
         $this->model = $kelas;
-    }
-
-    public function index()
-    {
-        return $this->model::All();;
-    }
-
-    public function store($request)
-    {
-        $data = $this->data($request);
-        $newKelas = $this->model::create($data);
-        return $newKelas;
-    }
-
-    public function update($request,$id)
-    {
-        $kelas = $this->model::find($id);
-        $data = $this->data($request);
-        $kelas->update($data);
-        return $kelas;
-    }
-
-    public function show($id)
-    {
-        $kelas = $this->model::find($id);
-        return $kelas;
-    }
-    public function delete($id)
-    {
-        $kelas = $this->model::find($id);
-        $kelas->destroy();
-        return $kelas;
     }
 
     public function data($request)

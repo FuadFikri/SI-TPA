@@ -3,7 +3,7 @@
 namespace App\Repositories;
 use App\Sekolah;
 use Illuminate\Database\Eloquent\Model;
-class SekolahRepository
+class SekolahRepository extends CrudRepository
 {
     protected $model;
 
@@ -11,11 +11,13 @@ class SekolahRepository
     {
         $this->model = $sekolah;
     }
-
-    public function index()
+    public function data($request)
     {
-        return $this->model::All();;
+        $data = [
+            'nama' => $request->nama_sekolah,
+            'jenjang' => $request->jenjang,
+        ];
+        return $data;
     }
-   
 }
 
