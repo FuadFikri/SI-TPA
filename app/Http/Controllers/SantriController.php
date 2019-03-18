@@ -32,8 +32,8 @@ class SantriController extends Controller
 
     public function create()
     {
-        $daftar_sekolah = $this->getDaftarSekolah();
-        $daftar_kelas = $this->getDaftarKelas();
+        $daftar_sekolah = $this->_getDaftarSekolah();
+        $daftar_kelas = $this->_getDaftarKelas();
         return view('santri.add',compact('daftar_sekolah','daftar_kelas'));
     }
 
@@ -80,11 +80,11 @@ class SantriController extends Controller
         return view('santri.import');
     }
 
-    private function getDaftarSekolah()
+    private function _getDaftarSekolah()
     {
         return $this->sekolahService->getAll();
     }
-    private function getDaftarKelas()
+    private function _getDaftarKelas()
     {
         return $this->kelasService->getAll();
     }
