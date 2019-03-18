@@ -14,9 +14,9 @@ class UserRepository extends CrudRepository{
     public function data($request)
     {
         $data = [
-            'name' => $request->nama,
+            'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password
+            'password' => bcrypt($request->password)
         ];
         return $data;
     }
