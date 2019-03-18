@@ -12,4 +12,6 @@ Route::get('santri/import','SantriController@get_import');
 Route::resource('santri','SantriController');
 Route::resource('ujian','UjianController');
 Route::resource('user','UserController');
+Route::resource('kelas','KelasController');
+Route::resource('sekolah','SekolahController');
 

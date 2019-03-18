@@ -73,8 +73,10 @@
             <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
               {{-- <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" /> --}}
               <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
-            <li><a href="{{route('santri.index')}}"><span class="oi oi-file"></span> Data Santri</a></li>
-            <li><a href="{{route('ujian.index')}}"><span class="oi oi-task"></span> Ujian</a></li>
+            <li><a href="{{route('santri.index')}}"><span class="oi oi-book"></span> Data Santri</a></li>
+            <li><a href="{{route('ujian.index')}}"><span class="oi oi-book"></span> Ujian</a></li>
+            <li><a href="{{route('kelas.index')}}"><span class="oi oi-book"></span> Kelas</a></li>
+            <li><a href="{{route('sekolah.index')}}"><span class="oi oi-book"></span> Sekolah</a></li>
               <li><a href="{{route('user.index')}}"><span class="oi oi-key"></span> Kelola Akun</a></li>
 
               <div class="d-block d-md-none">
