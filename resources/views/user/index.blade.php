@@ -30,7 +30,6 @@
                     <td>{{$user->email}}</td>
                     
                     <td>
-                        <a href="{{url('user/'.$user->id)}}" class="btn btn-outline-success btn-sm">Detail</a>
                         <a href="{{url('user/'.$user->id.'/edit')}}" class="btn btn-outline-warning btn-sm">Sunting</a>
                     <form method="POST" class="d-inline" onsubmit="return confirm('Yakin akan di hapus?')" action="{{route('user.destroy',$user->id)}}">
                             @csrf
