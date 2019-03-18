@@ -35,5 +35,9 @@ class UserService
         return $this->userRepository->update($request, $id);
         
     }
+    public function delete($id)
+    {
+        return $this->userRepository->delete($id);
+    }
 
 }
