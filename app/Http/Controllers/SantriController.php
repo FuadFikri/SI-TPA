@@ -54,8 +54,8 @@ class SantriController extends Controller
     public function edit($id)
     {
         $santri = $this->santriService->edit($id);
-        $daftar_sekolah = $this->getDaftarSekolah();
-        $daftar_kelas = $this->getDaftarKelas();
+        $daftar_sekolah = $this->_getDaftarSekolah();
+        $daftar_kelas = $this->_getDaftarKelas();
         return view('santri.edit',compact('daftar_sekolah','daftar_kelas','santri'));
     }
 
