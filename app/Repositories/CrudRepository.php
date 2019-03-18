@@ -37,7 +37,7 @@ class CrudRepository{
     public function delete($id)
     {
         $data = $this->model::find($id);
-        $data->destroy();
+        $data->delete();
         return $data;
     }
 
