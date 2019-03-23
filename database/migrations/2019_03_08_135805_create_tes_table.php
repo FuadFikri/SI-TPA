@@ -17,12 +17,16 @@ class CreateTesTable extends Migration
             $table->increments('id');
             $table->integer('santri_id')->unsigned();
             $table->integer('materi_id')->unsigned();
+            $table->integer('ujian_id')->unsigned();
             $table->integer('nilai');
             $table->text('deskripsi');
             $table->string('penguji');
+            $table->timestamps();
+            // foreign
             $table->foreign('santri_id')->references('id')->on('santris');
             $table->foreign('materi_id')->references('id')->on('materis');
-            $table->timestamps();
+            $table->foreign('ujian_id')->references('id')->on('ujians');
+            
         });
     }
 
