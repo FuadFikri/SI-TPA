@@ -50,6 +50,9 @@ class UjianController extends Controller
     }
     public function destroy($id)
     {
-        //
+        $ujian = $this->ujianService->delete($id);
+        if($ujian){
+            return redirect()->route('ujian.index')->with('status','data berhasil dihapus');
+        }
     }
 }
