@@ -17,4 +17,24 @@ class SekolahService
     {
         return $this->sekolahRepository->index();
     }
+    public function store($request)
+    {
+        return $this->sekolahRepository->store($request);
+    }
+    public function showDetail($id)
+    {
+        return $this->sekolahRepository->show($id);
+    }
+    public function edit($id)
+    {
+        return $this->sekolahRepository->show($id);
+    }
+    public function update($request, $id)
+    {
+        return $this->sekolahRepository->update($request, $id);
+    }
+    public function delete($id)
+    {
+        return $this->sekolahRepository->delete($id);
+    }
 }
