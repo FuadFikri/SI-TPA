@@ -59,7 +59,10 @@
                 </div>
                 <div class="form-group">
                     <label for="#">Sekolah</label>
-                    <select class="form-control" id="" name="sekolah" value="{{$santri->sekolah->nama}}">
+                    <select class="form-control" id="" name="sekolah" 
+                    @if ($santri->sekolah)
+                    value="{{$santri->sekolah->nama}}"
+                    @endif>
                         @foreach ($daftar_sekolah as $item)
                             <option value="{{$item->id}}">{{$item->nama}}</option>
                         @endforeach
@@ -71,7 +74,7 @@
                 </div>
                 <div class="form-group">
                     <label>Kelas TPA</label>
-                    <select class="form-control" id="" name="kls_tpa" value="{{$santri->kelas->nama}} >
+                    <select class="form-control" id="" name="kls_tpa" value="{{$santri->kelas !=null?$santri->kelas->nama:''}}">
                         @foreach ($daftar_kelas as $item)
                             <option value="{{$item->id}}">{{$item->nama}}</option>
                         @endforeach

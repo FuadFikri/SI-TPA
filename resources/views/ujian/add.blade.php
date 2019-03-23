@@ -11,23 +11,23 @@
                 <div class="row">
                     <div class="col-md-4 mb-3">
                         <label class="mt-4" for="">Semester</label> <br>
-                        <input type="radio" id="rd1" name="semester" value="ganjil"> <label for="rd1">Ganjil</label>
+                        <input type="radio" id="rd1" name="semester" value="ganjil" required> <label for="rd1">Ganjil</label>
                         <br>
-                        <input type="radio" id="rd2" name="semester" value="genap"> <label for="rd2">Genap</label>
+                        <input type="radio" id="rd2" name="semester" value="genap" required> <label for="rd2">Genap</label>
                         <br>
                         <label for="#">Tahun</label>
                         <input type="number" class="form-control" name="tahun" required>
 
                         <label for="keterangan">Keterangan</label>
-                        <textarea name="keterangan" id="keterangan" cols="30" rows="5"></textarea>
+                        <textarea name="keterangan" id="keterangan" cols="30" rows="5" required></textarea>
 
                         <label class="mt-4" for="">Status</label> <br>
-                        <input type="radio" id="rd3" name="status" value="1"> <label for="rd3">Aktif</label>
+                        <input type="radio" id="rd3" name="status" value="1" required> <label for="rd3">Aktif</label>
                         <br>
-                        <input type="radio" id="rd4" name="status" value="0"> <label for="rd4">Tidak Aktif</label>
+                        <input type="radio" id="rd4" name="status" value="0" required> <label for="rd4">Tidak Aktif</label>
                         <br>
                         <label for="materi_ujian">Materi yang diujiakan</label><br><select name="materi_ujian[]" multiple
-                            id="materi_ujian" class="form-control"></select><br><br />
+                            id="materi_ujian" class="form-control" required></select><br><br />
                     </div>
                 </div>
                 <div class="form-group" style="float: right;">

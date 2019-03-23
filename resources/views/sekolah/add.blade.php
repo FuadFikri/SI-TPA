@@ -16,7 +16,7 @@
 
                         <div class="form-group">
                             <label for="#">Jenjang</label>
-                            <select class="form-control" id="" name="jenjang">
+                            <select class="form-control" id="" name="jenjang" required>
                                 <option value="PAUD">PAUD</option>
                                 <option value="TK">TK</option>
                                 <option value="SD">SD</option>

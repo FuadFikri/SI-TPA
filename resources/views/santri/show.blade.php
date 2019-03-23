@@ -36,10 +36,10 @@
                             <li>{{$santri->jenis_kelamin}} </li>
                             <li>RT/RW : <b>{{$santri->RT}}/{{$santri->RW}}</b> </li>
                             <li>no. rumah : <b>{{$santri->no_rumah}}</b> </li>
-                            <li>sekolah di : <b>{{$santri->sekolah->nama}}</b> </li>
+                            <li>sekolah di : <b>{{$santri->sekolah != null ? $santri->sekolah->nama : ''}}</b> </li>
                             <li>masuk TPA tahun : <b>{{$santri->tahun_masuk_tpa}}</b> </li>
                             <li>nama orang tua : <b>{{$santri->nama_orang_tua}}</b> </li>
-                            <li>di TPA kelas : <b>{{$santri->kelas->nama}}</b> </li>
+                            <li>di TPA kelas : <b>{{$santri->kelas !=null ? $santri->kelas->nama : ''}}</b> </li>
                             <li>Masih aktif ? : <b> {{ $santri->isActive()? "aktif" : "tidak"}} </b> </li>
                         </ul>
                     </div>

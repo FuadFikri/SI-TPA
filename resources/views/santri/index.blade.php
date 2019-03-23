@@ -32,8 +32,12 @@
                 <tr>
                     <th>{{$i++}}</th>
                     <td>{{$santri->nama_panggilan}}</td>
-                    <td>{{$santri->kelas->nama}}</td>
-                    <td>{{$santri->sekolah->nama}}</td>
+                    <td>{{$santri->kelas != null ? $santri->kelas->nama : ''}}</td>
+                    <td>
+                        @if ($santri->sekolah)
+                        {{$santri->sekolah->nama}}    
+                        @endif
+                        </td>
                     <td>{{$santri->RT}}</td>
                     <td>{{$santri->nama_orang_tua}}</td>
                     <td>

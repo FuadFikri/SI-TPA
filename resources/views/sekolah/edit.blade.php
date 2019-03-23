@@ -6,7 +6,7 @@
             <h5>Edit Data sekolah</h5>
         </div>
         <div class="card-body">
-            <form action="{{route('sekolah.update',$sekolah->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('sekolah.update',$sekolah->id)}}" method="POST">
                 @csrf
                 <input type="hidden" value="PUT" name="_method">
                 <div class="row">
@@ -17,7 +17,7 @@
 
                         <div class="form-group">
                             <label for="#">Jenjang</label>
-                            <select class="form-control" id="" name="jenjang">
+                            <select class="form-control" id="" name="jenjang" required>
                                 <option value="PAUD">PAUD</option>
                                 <option value="TK">TK</option>
                                 <option value="SD">SD</option>
