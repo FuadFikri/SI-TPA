@@ -2,6 +2,13 @@
 
 @section('content')
 <div class="container">
+    @if (session('status'))
+        <div class="alert alert-warning">
+            {{session('status')}}
+        </div>
+        
+    @endif
+
     <a href="{{route('ujian.create')}}" class="btn btn-lg btn-outline-primary "> Input</a>
     <div class="row justify-content-center">
         <h4>Data</h4>
@@ -28,9 +35,9 @@
                         @endif
                     </td>
                     <td>
-                        <a href="" class="btn btn-outline-success btn-sm">Detail</a>
+                    <a href="{{route('ujian.show',$ujian->id)}}" class="btn btn-outline-success btn-sm">Detail</a>
                         <a href="{{route('ujian.edit',$ujian->id)}}" class="btn btn-outline-warning btn-sm">Sunting</a>
-                        <form method="POST" class="d-inline" onsubmit="return confirm('Yakin akan di hapus?')" action="">
+                    <form method="POST" class="d-inline" onsubmit="return confirm('Yakin akan di hapus?')" action="{{route('ujian.destroy',$ujian->id)}}">
                             @csrf
                             <input type="hidden" value="DELETE" name="_method">
                             <input type="submit" value="Hapus" class="btn btn-outline-danger btn-sm">
