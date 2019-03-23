@@ -16,9 +16,8 @@ class KelasController extends Controller
     }
     public function index()
     {
-        $daftar_kelas = Kelas::where('id', '>' ,0 )
-                        ->orderBy('nama_panggilan','asc')
-                        ->paginate(5);
+        $daftar_kelas = $this->kelasService->getAll();
+        return $daftar_kelas;
         return view('kelas.index', compact('daftar_kelas'));
     }
 
