@@ -31,5 +31,9 @@ class UjianService
     {
         return $this->ujianRepository->update($request, $id);
     }
+    public function delete($id)
+    {
+        return $this->ujianRepository->delete($id);
+    }
 
 }
