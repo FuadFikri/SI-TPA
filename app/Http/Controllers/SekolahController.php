@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\SekolahService;
+use App\Sekolah;
 class SekolahController extends Controller
 {
     protected $sekolahService;
@@ -14,7 +15,10 @@ class SekolahController extends Controller
 
     public function index()
     {
-        return $this->sekolahService->getAll();
+        $daftar_sekolah = Sekolah::where('id', '>' ,0 )
+                                ->orderBy('created_at','desc')
+                                ->paginate(5);
+        return view('sekolah.index', compact('daftar_sekolah'));
     }
 
     public function create()
@@ -26,18 +30,14 @@ class SekolahController extends Controller
     {
         $sekolah = $this->sekolahService->store($request);
         if ($sekolah) {
-            return view('sekolah.index')->with('status', 'data berhasil disimpan');
+            return redirect()->route('sekolah.index')->with('status', 'data berhasil disimpan');
         }
-    }
-
-    public function show($id)
-    {
-        return view('sekolah.show',compact($this->sekolahService->show($id)));
     }
 
     public function edit($id)
     {
-        return view('sekolah.edit', compact($this->sekolahService->edit($id)));
+        $sekolah = $this->sekolahService->edit($id);
+        return view('sekolah.edit', compact('sekolah'));
     }
 
     public function update(Request $request, $id)
@@ -51,7 +51,7 @@ class SekolahController extends Controller
     public function destroy($id)
     {
         $sekolahDeleted = $this->sekolahService->delete($id);
-        if ($sekolahUpdated) {
+        if ($sekolahDeleted) {
             return redirect()->route('sekolah.index')->with('status','data berhasil dihapus');
         }
     }
