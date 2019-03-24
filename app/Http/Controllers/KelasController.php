@@ -17,15 +17,12 @@ class KelasController extends Controller
     public function index()
     {
         $daftar_kelas = $this->kelasService->getAll();
-        return $daftar_kelas;
         return view('kelas.index', compact('daftar_kelas'));
     }
 
     public function create()
     {
-        $daftar_sekolah = $this->getDaftarSekolah();
-        $daftar_kelas = $this->getDaftarKelas();
-        return view('kelas.add',compact('daftar_sekolah','daftar_kelas'));
+        return view('kelas.add');
     }
 
     public function store(Request $request)
@@ -53,26 +50,16 @@ class KelasController extends Controller
     {
         $new = $this->kelasService->update($request, $id);
         if ($new) {
-            echo "updated";
+            return redirect()->route('kelas.index')->with('status','data berhasil diperbaharui');
         }
     }
 
     public function destroy($id)
     {
-        //
+        $kelas = $this->kelasService->delete($id);
+        if($kelas){
+            return redirect()->route('kelas.index')->with('status','data berhasil dihapus');
+        }
     }
 
-    public function get_import()
-    {
-        return view('kelas.import');
-    }
-
-    private function getDaftarSekolah()
-    {
-        return $this->sekolahService->getAll();
-    }
-    private function getDaftarKelas()
-    {
-        return $this->kelasService->getAll();
-    }
 }

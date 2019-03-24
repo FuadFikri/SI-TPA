@@ -20,20 +20,24 @@ class KelasService
 
     public function store($request)
     {
-        return $this->KelasRepository->store($request);
+        return $this->kelasRepository->store($request);
     }
     public function showDetail($id)
     {
-        return $this->KelasRepository->show($id);
+        return $this->kelasRepository->show($id);
     }
     public function edit($id)
     {
-        return $this->KelasRepository->show($id);
+        return $this->kelasRepository->show($id);
     }
     public function update($request, $id)
     {
-        return $this->KelasRepository->update($request, $id);
+        return $this->kelasRepository->update($request, $id);
         
+    }
+    public function delete($id)
+    {
+        return $this->kelasRepository->delete($id);
     }
     public function count()
     {
