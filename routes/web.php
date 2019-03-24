@@ -15,3 +15,5 @@ Route::resource('user','UserController');
 Route::resource('kelas','KelasController');
 Route::resource('sekolah','SekolahController');
 
+Route::get('data-master','DataMasterList');
+
