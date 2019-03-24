@@ -75,6 +75,7 @@
               <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
             <li><a href="{{url('data-master')}}"><span class="oi oi-folder"></span>Data Master</a></li>
             <li><a href="{{route('ujian.index')}}"><span class="oi oi-book"></span> Ujian</a></li>
+            <li><a href="#"><span class="oi oi-chat"></span> Ruang Srawung</a></li>
 
               <div class="d-block d-md-none">
                   <div class="dropdown-divider"></div>
