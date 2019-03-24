@@ -35,5 +35,9 @@ class KelasService
         return $this->KelasRepository->update($request, $id);
         
     }
+    public function count()
+    {
+        return $this->kelasRepository->count();
+    }
 
 }

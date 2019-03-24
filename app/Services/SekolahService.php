@@ -37,4 +37,8 @@ class SekolahService
     {
         return $this->sekolahRepository->delete($id);
     }
+    public function count()
+    {
+        return $this->sekolahRepository->count();
+    }
 }

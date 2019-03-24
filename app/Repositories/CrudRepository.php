@@ -45,4 +45,9 @@ class CrudRepository{
     {
     
     }
+
+    public function count()
+    {
+        return $this->model::count();
+    }
 }

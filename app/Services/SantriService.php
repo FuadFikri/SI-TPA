@@ -42,4 +42,8 @@ class SantriService
         return $this->santriRepository->delete($id);
     }
 
+    public function count()
+    {
+        return $this->santriRepository->count();
+    }
 }
