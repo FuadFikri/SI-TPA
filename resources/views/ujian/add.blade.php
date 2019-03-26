@@ -27,7 +27,7 @@
                         <input type="radio" id="rd4" name="status" value="0" required> <label for="rd4">Tidak Aktif</label>
                         <br>
                         <label for="materi_ujian">Materi yang diujiakan</label><br><select name="materi_ujian[]" multiple
-                            id="materi_ujian" class="form-control" required></select><br><br />
+                            id="materi_ujian" class="form-control" ></select><br><br />
                     </div>
                 </div>
                 <div class="form-group" style="float: right;">
