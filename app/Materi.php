@@ -13,6 +13,10 @@ class Materi extends Model
 
     public function santris()
     {
-        return $this->belongsToMany('App\Santri','ujians');
+        return $this->belongsToMany('App\Santri','tes');
+    }
+
+    public function ujian(){
+        return $this->belongsTo('App\Ujian');
     }
 }
