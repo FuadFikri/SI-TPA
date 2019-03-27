@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Materi extends Model
 {
+    protected $guarded = ['id'];
     public function kelas()
     {
         return $this->belongsTo('App\Kelas');
