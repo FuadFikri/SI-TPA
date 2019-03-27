@@ -58,5 +58,23 @@
         </div>
     </div>
 </div>
+<div class="col-lg-3 col-md-6 mb-2 col-sm-6">
+    <div class="card border-0 shadow-sm bg-info text-light">
+        <div class="card-body">
+            <div class="media">
+                <div class="media-body">
+                    <h2 class="fw-bold">{{$jumlah_materi}}</h2>
+                    <h6>Data Materi</h6>
+                </div>
+                <span class="oi oi-basket p-2 fs-9 text-indigo-lighter"></span>
+            </div>
+        </div>
+        <div class="card-footer border-0 text-center p-1 bg-info-darker">
+            <a href="{{route('materi.index')}}" class="text-light">
+                More info <span class="oi oi-arrow-circle-right"></span>
+            </a>
+        </div>
+    </div>
+</div>
 
 @endsection

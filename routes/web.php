@@ -21,6 +21,7 @@ Route::resource('ujian','UjianController');
 Route::resource('user','UserController');
 Route::resource('kelas','KelasController');
 Route::resource('sekolah','SekolahController');
+Route::resource('materi','MateriController');
 
 Route::get('data-master','DataMasterList');
 
