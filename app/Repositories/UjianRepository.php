@@ -21,5 +21,16 @@ class UjianRepository extends CrudRepository
         ];
         return $data;
     }
+
+    public function store($request)
+    {
+        $requestData = $this->data($request);
+        $newUjian = $this->model::create($requestData);
+        $newUjian->save();
+        
+        $newUjian->materis()->attach($request->materi_ujian);
+        $newUjian->save();
+        return $newUjian;
+    }
 }
 
