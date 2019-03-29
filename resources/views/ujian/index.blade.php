@@ -17,7 +17,6 @@
                 <tr>
                     <th scope="col">Semester</th>
                     <th scope="col">Tahun</th>
-                    <th scope="col">keterangan</th>
                     <th scope="col">status</th>
                 </tr>
             </thead>
@@ -26,7 +25,6 @@
                 <tr>
                     <td>{{$ujian->semester}}</td>
                     <td>{{$ujian->tahun}}</td>
-                    <td>{{$ujian->keterangan}}</td>
                     <td>
                         @if($ujian->status == 1)
                             <span class="badge badge-success"> Aktif </span>

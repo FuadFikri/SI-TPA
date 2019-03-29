@@ -40,7 +40,8 @@ class UjianController extends Controller
     }
     public function show($id)
     {
-        
+        $ujian = $this->ujianService->showDetail($id);
+        return view('ujian.show',compact('ujian'));
     }
     public function edit($id)
     {
