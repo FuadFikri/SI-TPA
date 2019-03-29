@@ -12,4 +12,8 @@ class Ujian extends Model
     {
         return $this->hasMany('App\Tes');
     }
+    public function materis()
+    {
+        return $this->hasMany('App\Materi');
+    }
 }

@@ -17,7 +17,7 @@ class Materi extends Model
         return $this->belongsToMany('App\Santri','tes');
     }
 
-    public function ujian(){
-        return $this->belongsTo('App\Ujian');
+    public function ujians(){
+        return $this->belongsToMany('App\Ujian');
     }
 }
