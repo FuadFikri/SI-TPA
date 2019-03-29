@@ -8,6 +8,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('santri/import','SantriController@get_import');
+Route::get('materi/searchMateriAjax','MateriController@searchMateriAjax');
+
 Route::prefix('ustadz')->group(function(){
     Route::get('/','UjianController@getUjian');
     Route::get('pilih-santri','UjianController@getAllSantri')->name('pilih-santri');

@@ -48,5 +48,9 @@ class MateriService
     {
         return $this->materiRepository->materiUjianByKelas($kelas_id);
     }
+    public function searchMateriAjax($request)
+    {
+        return $this->materiRepository->searchMateriAjax($request);
+    }
 
 }

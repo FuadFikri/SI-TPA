@@ -27,6 +27,12 @@ class MateriRepository extends CrudRepository{
     {
         return $this->model::where('kelas_id',$kelas_id)->get();
     }
+    public function searchMateriAjax($request)
+    {
+        $keyword = $request->get('q');
+        $materi = $this->model::where('judul','LIKE',"%$keyword")->get();
+        return $materi;
+    }
 
 }
 

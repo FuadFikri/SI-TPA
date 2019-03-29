@@ -36,4 +36,35 @@
             </form>
         </div>
     </div>
+    
     @endsection
+    
+    @section('footer-scripts')
+<link href="{{asset('css/select2.min.css')}}" rel="stylesheet" />
+<script src="{{asset('js/select2.min.js')}}"></script>
+
+{{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> --}}
+
+<script type="text/javascript">
+$(document).ready(function() {
+$('#materi_ujian').select2({
+ajax: {
+url: 'http://localhost:8000/materi/searchMateriAjax',
+processResults: function(data){
+                return {
+                        results: data.map(function(item){
+                            return {
+                                id: item.id,
+                                text:item.judul
+                                } 
+                        })
+                }
+    }
+    }
+    });
+    
+});
+
+</script>
+@endsection

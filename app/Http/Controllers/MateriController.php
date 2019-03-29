@@ -68,4 +68,9 @@ class MateriController extends Controller
         }
     }
 
+    public function searchMateriAjax(Request $request)
+    {
+        return $this->materiService->searchMateriAjax($request);
+    }
+
 }
