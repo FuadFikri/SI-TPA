@@ -14,6 +14,6 @@ class Ujian extends Model
     }
     public function materis()
     {
-        return $this->hasMany('App\Materi');
+        return $this->belongsToMany('App\Materi','materi_ujians');
     }
 }

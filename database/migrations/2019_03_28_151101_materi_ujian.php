@@ -13,13 +13,13 @@ class MateriUjian extends Migration
      */
     public function up()
     {
-        Schema::create('materi-ujian', function (Blueprint $table) {
+        Schema::create('materi_ujians', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ujian_id')->unsigned();
             $table->integer('materi_id')->unsigned();
 
-            $table->foreign('ujian_id')->references('id')->on('ujians');
-            $table->foreign('materi_id')->references('id')->on('materis');
+            $table->foreign('ujian_id')->references('id')->on('ujians')->onDelete('cascade');
+            $table->foreign('materi_id')->references('id')->on('materis')->onDelete('cascade');
             $table->timestamps();
         });
     }

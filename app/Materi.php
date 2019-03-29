@@ -18,6 +18,6 @@ class Materi extends Model
     }
 
     public function ujians(){
-        return $this->belongsToMany('App\Ujian');
+        return $this->hasMany('App\Ujian','materi_ujians');
     }
 }
