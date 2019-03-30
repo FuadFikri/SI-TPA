@@ -29,7 +29,7 @@
 
                         <div class="form-group">
                             <label>Kelas TPA</label>
-                            <select class="form-control" id="" name="kelas_id"   >
+                            <select class="form-control" id="" name="kelas_id"  required >
                                     
                                 @foreach ($daftar_kelas as $item)
                                     <option value="{{$item->id}}" {{$materi->kelas->id == $item->id? 'selected' : ''}}>{{$item->nama}}</option>
