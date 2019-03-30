@@ -47,9 +47,10 @@ class MateriController extends Controller
     }
 
     public function edit($id)
-    {
+    {   
+        $daftar_kelas = $this->kelasService->getAll();
         $materi = $this->materiService->edit($id);
-        return view('materi.edit',compact('daftar_sekolah','daftar_materi','materi'));
+        return view('materi.edit',compact('daftar_kelas','materi'));
     }
 
     public function update(Request $request, $id)
