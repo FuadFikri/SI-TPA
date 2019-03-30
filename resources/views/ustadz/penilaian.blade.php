@@ -25,24 +25,28 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
+                            @if ($materi_sudah_dites)
+                            Materi yang sudah dites :
+                            
+                            @forelse ($materi_sudah_dites as $item)
+                            {{$item->materi->judul}}
+                            @empty
+                                belum ada
+                            @endforelse
+                            
+                            @endif
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
                             @foreach ($daftar_materi as $materi)
                             <div class="col-lg-10 col-md-6 mb-2 col-sm-12">
                                 <div class="card border-white text-dark border-0 shadow-sm">
                                     <div class="card-header bg-white">
                                         <span class="btn p-0" data-toggle="collapse"
                                             data-target="{{$materi->kelas == $santri->kelas ? '#collapsible-card-'.$materi->id : '#'}}">
-                                            @if ($ujian->tes)
-                                                @foreach ($ujian->tes as $tes)
-                                                    @if ($tes->materi_id == $materi->id )
-                                                        @if ( $tes->santri_id == $santri->id)
-                                                       <del> {{$materi->judul}} | {{$materi->kelas?$materi->kelas->nama : ''}}</del>
-                                                        @endif
-                                                    @else 
-                                                    {{$materi->judul}} | {{$materi->kelas?$materi->kelas->nama : ''}}
-                                                    @endif
-                                                    
-                                                @endforeach
-                                            @endif
+                                                {{$materi->judul}} | {{$materi->kelas?$materi->kelas->nama : ''}} 
                                         </span>
                                     </div>
                                     <div class="collapse" id="collapsible-card-{{$materi->id}}">
