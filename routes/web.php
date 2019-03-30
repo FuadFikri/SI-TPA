@@ -11,10 +11,10 @@ Route::get('santri/import','SantriController@get_import');
 Route::get('materi/searchMateriAjax','MateriController@searchMateriAjax');
 
 Route::prefix('ustadz')->group(function(){
-    Route::get('/','UjianController@getUjian');
+    Route::get('/','UjianController@getUjian')->name('ustadz');
     Route::get('pilih-santri','UjianController@getAllSantri')->name('pilih-santri');
     Route::post('penilaian','UjianController@getSelectedSantri');
-    // Route::post('penilaian','UjianController@storeNilaiTes');
+    Route::post('simpan-nilai','UjianController@storeNilaiTes');
 });
 
 

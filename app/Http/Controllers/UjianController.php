@@ -5,6 +5,8 @@ use App\Services\UjianService;
 use App\Services\SantriService;
 use App\Services\MateriService;
 use App\Ujian;
+use App\Tes;
+use App\Materi;
 use Illuminate\Http\Request;
 
 class UjianController extends Controller
@@ -87,12 +89,33 @@ class UjianController extends Controller
         $ujian = $this->ujianService->showDetail($request->ujian_id);
         $santri = $this->santriService->showDetail($request->santri_id);
         $daftar_materi = $ujian->materis;
-        return view('ustadz.penilaian',compact('daftar_materi','santri'));
+        $materi_sudah_dites = Tes::with('materi')->where('santri_id',$santri->id)->get();
+        // return $materi_sudah_dites;
+        return view('ustadz.penilaian',compact('daftar_materi','santri','ujian','materi_sudah_dites'));
     }
     
-    public function storeNilaiTes()
+    public function storeNilaiTes(Request $request)
     {
-        return "ok";
+        // todondan nama penguji
+        try {
+            $penilaian = Tes::where('santri_id',$request->santri_id)->where('materi_id',$request->materi_id)->where('ujian_id',$request->ujian_id)->firstOrFail();
+            $penilaian->nilai = $request->nilai;
+            $penilaian->deskripsi = $request->deskripsi;
+            $penilaian->penguji = 'bambang';
+            $penilaian->save();
+
+        } catch (\Throwable $th) {
+            $penilaian = Tes::create([
+                'santri_id'=> $request->santri_id,
+                'materi_id'=> $request->materi_id,
+                'ujian_id'=> $request->ujian_id,
+                'nilai'=> $request->nilai,
+                'deskripsi'=> $request->deskripsi,
+                'penguji'=> 'joko'
+            ]);
+        }
+        return redirect()->route('ustadz')->with('status','nilai berhasil disimpan');
+        
     }
 
 }
