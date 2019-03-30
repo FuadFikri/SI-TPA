@@ -20,4 +20,8 @@ class Materi extends Model
     public function ujians(){
         return $this->hasMany('App\Ujian','materi_ujians');
     }
+
+    public function tes(){
+        return $this->hasMany('App\Tes');
+    }
 }

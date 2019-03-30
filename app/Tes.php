@@ -11,4 +11,8 @@ class Tes extends Model
     {
         return $this->belongsTo('App\Ujian');
     }
+    public function materi()
+    {
+        return $this->belongsTo('App\Materi');
+    }
 }
