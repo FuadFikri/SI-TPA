@@ -77,20 +77,22 @@ class UjianController extends Controller
     {
         $ujian_id = $request->get('ujian_id');
         // $ujian = $this->ujianService->showDetail($ujian_id);
-        $daftar_santri =  $this->santriService->getAll();
+        $daftar_santri =  $this->santriService->getAllSantriAktif();
         return view('ustadz.daftar-santri',compact('daftar_santri','ujian_id'));
     }
 
+    // menampilkan halaman santri + daftar materi yang akan diujikan
     public function getSelectedSantri(Request $request)
     {
-        // $ujian = $this->ujianService->showDetail($request->ujian_id);
+        $ujian = $this->ujianService->showDetail($request->ujian_id);
         $santri = $this->santriService->showDetail($request->santri_id);
-        return  $this->materiService->getMateriUjianByKelas($santri->kelas_id);
+        $daftar_materi = $ujian->materis;
+        return view('ustadz.penilaian',compact('daftar_materi','santri'));
     }
     
     public function storeNilaiTes()
     {
-
+        return "ok";
     }
 
 }
