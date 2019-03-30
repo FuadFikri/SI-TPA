@@ -38,6 +38,10 @@ class SantriRepository extends CrudRepository
         return null;
         
     }
+
+    public function getAllSantriAktif(){
+        return $this->model::where('isActive',1)->get();
+    }
     
 }
 

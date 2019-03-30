@@ -46,4 +46,8 @@ class SantriService
     {
         return $this->santriRepository->count();
     }
+    public function getAllSantriAktif()
+    {
+        return $this->santriRepository->getAllSantriAktif();
+    }
 }
