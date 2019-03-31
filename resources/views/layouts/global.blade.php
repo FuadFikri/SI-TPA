@@ -111,10 +111,10 @@
         </div>
       </div>
   </div>
-
-<script src="{{asset('js\jquery-3.3.1.min.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('js\popper.min.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('js\bootstrap.min.js')}}" crossorigin="anonymous"></script>
+>
+<script src="{{asset('js/jquery-3.3.1.min.js')}}" crossorigin="anonymous"></script>
+<script src="{{asset('js/popper.min.js')}}" crossorigin="anonymous"></script>
+<script src="{{asset('js/bootstrap.min.js')}}" crossorigin="anonymous"></script>
   
 {{-- <script
 			  src="https://code.jquery.com/jquery-3.3.1.min.js"
