@@ -29,6 +29,8 @@
                         <br>
                         <input type="radio" id="rd4" name="status" value="0" {{$ujian->status==0? 'checked' : ''}}> <label for="rd4">Tidak Aktif</label>
                         <br>    
+                        <label for="materi_ujian">Materi yang diujiakan</label><br><select name="materi_ujian[]" multiple
+                            id="materi_ujian" class="form-control"  ></select><br><br />
                     </div>
                 </div>
                 <div class="form-group" style="float: right;">
@@ -37,4 +39,33 @@
             </form>
         </div>
     </div>
+    @endsection
+    @section('footer-scripts')
+    <link href="{{asset('css/select2.min.css')}}" rel="stylesheet" />
+    <script src="{{asset('js/select2.min.js')}}"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#materi_ujian').select2({
+            ajax: {
+                url: 'http://127.0.0.1:8000/materi/searchMateriAjax',
+                processResults: function (data) {
+                    return {
+                        results: data.map(function (item) {
+                            return {
+                                id: item.id,
+                                text: item.judul
+                            }
+                        })
+                    }
+                }
+            }
+        });
+        var materis = {!!$ujian->materis!!}
+        materis.forEach(function (materi) {
+            var option = new Option(materi.judul, materi.id, true, true);
+            $('#materi_ujian').append(option).trigger('change');
+        });
+    });
+    
+    </script>
     @endsection

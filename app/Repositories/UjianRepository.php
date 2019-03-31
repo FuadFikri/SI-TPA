@@ -32,5 +32,14 @@ class UjianRepository extends CrudRepository
         $newUjian->save();
         return $newUjian;
     }
+    public function update($request,$id)
+    {
+        $oldUjian = $this->model::find($id);
+        $dataRequest = $this->data($request);
+        $oldUjian->update($dataRequest);
+        $oldUjian->materis()->sync($request->materi_ujian);
+        $oldUjian->save();
+        return $oldUjian;
+    }
 }
 
