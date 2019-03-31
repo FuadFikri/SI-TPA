@@ -114,7 +114,7 @@ class UjianController extends Controller
                 'penguji'=> 'joko'
             ]);
         }
-        return redirect()->route('ustadz')->with('status','nilai berhasil disimpan');
+        return redirect()->route('ustadz')->with('status','Nilai berhasil disimpan');
         
     }
 

@@ -1,6 +1,11 @@
 @extends('layouts.global')
 
 @section('content')
+@if(session('status'))
+    <div class="alert alert-success">
+        {{session('status')}}
+    </div>
+    @endif
 @foreach ($daftar_ujian as $ujian)
 <div class="col-md-6 col-lg-12 col-12 mb-2 col-sm-9">
     @if ($ujian->status==0)
