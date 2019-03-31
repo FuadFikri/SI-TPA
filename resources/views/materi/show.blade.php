@@ -21,6 +21,11 @@
                                         <li><b>{{$materi->deskripsi}}</b></li>
                                 </ul>
                             </li>
+                            <li>Link Materi
+                                <ul>
+                                        <li> <a href="{{$materi->link_materi}}" target="_blank"> <b>referensi materi</b></a></li>
+                                </ul>
+                            </li>
                             <li>Standar Kelulusan
                                 <ul>
                                         <li><b> {{$materi->parameter_kelulusan}}</b></li>
