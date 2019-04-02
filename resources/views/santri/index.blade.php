@@ -25,12 +25,9 @@
                 </tr>
             </thead>
             <tbody>
-                @php
-                $i=1;
-                @endphp
                 @foreach($daftar_santri as $santri)
                 <tr>
-                    <th>{{$i++}}</th>
+                    <th>{{$loop->iteration}}</th>
                     <td>{{$santri->nama_panggilan}}</td>
                     <td>{{$santri->kelas != null ? $santri->kelas->nama : ''}}</td>
                     <td>
