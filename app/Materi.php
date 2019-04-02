@@ -12,9 +12,9 @@ class Materi extends Model
         return $this->belongsTo('App\Kelas');
     }
 
-    public function santris()
+    public function santri_sudah_ujian()
     {
-        return $this->belongsToMany('App\Santri','tes');
+        return $this->belongsToMany('App\Santri','tes')->withPivot('nilai','deskripsi','penguji');
     }
 
     public function ujians(){

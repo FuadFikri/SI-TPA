@@ -78,7 +78,6 @@ class UjianController extends Controller
     public function getAllSantri(Request $request)
     {
         $ujian_id = $request->get('ujian_id');
-        // $ujian = $this->ujianService->showDetail($ujian_id);
         $daftar_santri =  $this->santriService->getAllSantriAktif();
         return view('ustadz.daftar-santri',compact('daftar_santri','ujian_id'));
     }
@@ -90,7 +89,6 @@ class UjianController extends Controller
         $santri = $this->santriService->showDetail($request->santri_id);
         $daftar_materi = $ujian->materis;
         $materi_sudah_dites = Tes::with('materi')->where('santri_id',$santri->id)->get();
-        // return $materi_sudah_dites;
         return view('ustadz.penilaian',compact('daftar_materi','santri','ujian','materi_sudah_dites'));
     }
     
@@ -98,7 +96,9 @@ class UjianController extends Controller
     {
         // todondan nama penguji
         try {
-            $penilaian = Tes::where('santri_id',$request->santri_id)->where('materi_id',$request->materi_id)->where('ujian_id',$request->ujian_id)->firstOrFail();
+            $penilaian = Tes::where('santri_id',$request->santri_id)
+                            ->where('materi_id',$request->materi_id)
+                            ->where('ujian_id',$request->ujian_id)->firstOrFail();
             $penilaian->nilai = $request->nilai;
             $penilaian->deskripsi = $request->deskripsi;
             $penilaian->penguji = 'bambang';
@@ -116,6 +116,12 @@ class UjianController extends Controller
         }
         return redirect()->route('ustadz')->with('status','Nilai berhasil disimpan');
         
+    }
+
+    public function hasilUjianPerMateri(Request $request)
+    {
+        $hasil = Materi::with('santri_sudah_ujian')->where('id',$request->materi)->first();
+        return view('ujian.hasil-per-materi',compact('hasil'));
     }
 
 }

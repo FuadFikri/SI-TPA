@@ -28,10 +28,10 @@ class Santri extends Model
     {
         return $this->belongsTo('App\Sekolah');
     }
-    public function materis()
-    {
-        return $this->hasMany('App\Materi','ujians');
-    }
+    // public function materis()
+    // {
+    //     return $this->hasMany('App\Materi','ujians');
+    // }
 
 
 }

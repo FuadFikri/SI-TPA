@@ -13,15 +13,18 @@
                         <ul>
                         <li>Semester <b>{{$ujian->semester}}</b></li>
                         <li>tahun <b>{{$ujian->tahun}}</b></li>
-                        <li>keterangan<b> {{$ujian->keterangan}}</b></li>
+                        <li>keterangan<ul><b> {{$ujian->keterangan}}</b></ul></li>
                         <li>status <b>{{$ujian->status==1?'aktif' :'tidak aktif'}}</b></li>
                         <li>
                             Materi
                             @foreach ($ujian->materis as $item)
-                            <ul>   <li><b>{{ $item->judul}}</b></li></ul>
+                            <ul>   <li><a href="{{url('lihat-nilai?materi='.$item->id)}}"><b>
+                                        {{ $item->judul}}
+                                    </b></a></li>
+                            </ul>
                             @endforeach
                         </li>    
-                       
+                    
                     </ul>
                     </div>
                 </div>

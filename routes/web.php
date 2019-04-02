@@ -9,7 +9,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('santri/import','SantriController@get_import');
 Route::get('materi/searchMateriAjax','MateriController@searchMateriAjax');
-
+Route::get('lihat-nilai','UjianController@hasilUjianPerMateri');
 Route::prefix('ustadz')->group(function(){
     Route::get('/','UjianController@getUjian')->name('ustadz');
     Route::get('pilih-santri','UjianController@getAllSantri')->name('pilih-santri');
