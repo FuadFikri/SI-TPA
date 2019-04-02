@@ -16,16 +16,16 @@ class CreateTesTable extends Migration
         Schema::create('tes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('santri_id')->unsigned();
-            $table->integer('materi_id')->unsigned();
+            $table->integer('materi_id')->unsigned()->nullable();
             $table->integer('ujian_id')->unsigned();
             $table->integer('nilai');
             $table->text('deskripsi');
             $table->string('penguji');
             $table->timestamps();
             // foreign
-            $table->foreign('santri_id')->references('id')->on('santris');
-            $table->foreign('materi_id')->references('id')->on('materis');
-            $table->foreign('ujian_id')->references('id')->on('ujians');
+            $table->foreign('santri_id')->references('id')->on('santris')->onDelete('cascade');
+            $table->foreign('materi_id')->references('id')->on('materis')->onDelete('set null');
+            $table->foreign('ujian_id')->references('id')->on('ujians')->onDelete('cascade');
             
         });
     }
