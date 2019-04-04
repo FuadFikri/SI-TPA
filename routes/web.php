@@ -6,10 +6,12 @@ Auth::routes();
 
 // navigation
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'DashboardController@index')->name('dashboard');
 
 Route::get('santri/import','SantriController@get_import');
 Route::get('materi/searchMateriAjax','MateriController@searchMateriAjax');
 Route::get('lihat-nilai','UjianController@hasilUjianPerMateri');
+Route::get('ujian/cetak-raport','UjianController@cetak_raport');
 Route::prefix('ustadz')->group(function(){
     Route::get('/','UjianController@getUjian')->name('ustadz');
     Route::get('pilih-santri','UjianController@getAllSantri')->name('pilih-santri');

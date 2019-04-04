@@ -74,7 +74,7 @@
 
             <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
               {{-- <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" /> --}}
-              <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
+            <li><a href="{{route('dashboard')}}"><span class="oi oi-home"></span> Home</a></li>
             <li><a href="{{url('data-master')}}"><span class="oi oi-folder"></span>Data Master</a></li>
             <li><a href="{{route('ujian.index')}}"><span class="oi oi-book"></span> Ujian</a></li>
             <li><a href="{{url('ustadz')}}"><span class="oi oi-task"></span>Penilaian Ujian</a></li>
@@ -115,6 +115,7 @@
 <script src="{{asset('js/jquery-3.3.1.min.js')}}" crossorigin="anonymous"></script>
 <script src="{{asset('js/popper.min.js')}}" crossorigin="anonymous"></script>
 <script src="{{asset('js/bootstrap.min.js')}}" crossorigin="anonymous"></script>
+<script src="{{asset('js/Chart.bundle.min.js')}}" crossorigin="anonymous"></script>
   
 {{-- <script
 			  src="https://code.jquery.com/jquery-3.3.1.min.js"
