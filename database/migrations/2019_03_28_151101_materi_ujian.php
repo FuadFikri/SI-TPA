@@ -31,6 +31,6 @@ class MateriUjian extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('materi_ujians');
     }
 }
