@@ -17,9 +17,10 @@
             <div class="container">
                 <div class="row">
 
-                    <form action="" method="post">
+                <form action="{{url('santri/import')}}" method="post" enctype="multipart/form-data" >
+                    @csrf
                         <label for="#" class="bg-warning-lighter pl-3">Upload disini</label>
-                        <input type="file" class="form-control" required>
+                        <input type="file" class="form-control" required name="file_data_santri">
                         <br>
                         <input type="submit" value="Upload" class="btn-info btn btn-lg">
                     </form>

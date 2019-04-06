@@ -24,9 +24,10 @@
                             </ul>
                             @endforeach
                         </li>    
-                    
+                        
                     </ul>
-                    </div>
+                </div>
+                <a href="{{url('ujian/cetak-raport')}}" class="btn btn-info">Cetak Rapor</a>
                 </div>
             </div>
         </div>

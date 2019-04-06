@@ -75,11 +75,6 @@ class SantriController extends Controller
         }
     }
 
-    public function get_import()
-    {
-        return view('santri.import');
-    }
-
     private function _getDaftarSekolah()
     {
         return $this->sekolahService->getAll();
