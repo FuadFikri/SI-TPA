@@ -20,10 +20,10 @@ class CreateSantrisTable extends Migration
             $table->date('tgl_lahir');
             $table->integer('RT');
             $table->integer('RW');
-            $table->integer('no_rumah')->nullable();
+            $table->string('no_rumah')->nullable();
             $table->string('url_foto')->nullable();
             $table->integer('sekolah_id')->unsigned()->nullable();
-            $table->string('tahun_masuk_tpa');
+            $table->integer('tahun_masuk_tpa');
             $table->string('nama_orang_tua');
             $table->string('jenis_kelamin');
             $table->integer('isActive')->nullable();
