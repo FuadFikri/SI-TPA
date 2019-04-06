@@ -19,5 +19,9 @@ class SekolahRepository extends CrudRepository
         ];
         return $data;
     }
+
+    public function countWithSantri(){
+        return $this->model::whereHas('santris')->withCount('santris')->get();
+    }
 }
 

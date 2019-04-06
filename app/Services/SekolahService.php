@@ -41,4 +41,25 @@ class SekolahService
     {
         return $this->sekolahRepository->count();
     }
+    public function getNamaSekolah()
+    {
+        $sekolah =  $this->sekolahRepository->countWithSantri();
+        $nama_sekolah = $sekolah->map(function($item,$key){
+            if ($item->santris_count>0) {
+                return $item->nama;
+            }
+        });
+        return $nama_sekolah;
+    }
+    public function getJumlahSantriPerSekolah()
+    {
+        $sekolah =  $this->sekolahRepository->countWithSantri();
+        $jumlah = $sekolah->map(function($item,$key){
+            if ($item->santris_count>0) {
+                return $item->santris_count;
+            }
+        });
+        return $jumlah;
+    }
 }
+    

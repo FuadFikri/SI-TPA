@@ -1,6 +1,7 @@
 @extends('layouts.global')
 
 @section('content')
+
 <div class="container">
     <div class="row">
         <div class="col-lg-7 mb-2">
@@ -116,7 +117,7 @@
                 'rgba(153, 102, 255, 1)',
                 'rgba(255, 159, 64, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 2
         }]
     }
     var myBarChart = new Chart(ctx, {
@@ -128,15 +129,17 @@
     // ----doughnut ----//
 
     // sekolah
+    
+    
     var ctxDoughnut = document.getElementById('chartjs-doughnut-sekolah')
     var myDoughnutChart = new Chart(ctxDoughnut, {
         type: 'doughnut',
         data: {
             datasets: [{
-                data: [10, 20, 30],
-                backgroundColor: ['#24235C', '#47467A', 'aqua']
+                data: {{$jumlah}},
+                backgroundColor: ['rgb(252, 185, 3)', 'rgb(198, 252, 3)', 'rgb(0, 68, 255)','rgb(3, 49, 252)',' rgb(231, 3, 252)','rgb(252, 3, 190)']
             }],
-            labels: ['April', 'May', 'June']
+            labels: {!!$nama_sekolah!!}
         }
     })
     // end sekolah
