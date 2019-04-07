@@ -44,4 +44,33 @@ class KelasService
         return $this->kelasRepository->count();
     }
 
+    public function getNamaKelas()
+    {
+        $kelas =  $this->kelasRepository->countWithSantri();
+        $nama_kelas = $kelas->map(function($item,$key){
+            if ($item->santris_count>0) {
+                return $item->nama;
+            }
+        });
+        return $nama_kelas;
+    }
+    public function countSantri()
+    {
+        $kelas =  $this->kelasRepository->countWithSantri();
+        $jumlah = $kelas->map(function($item,$key){
+            if ($item->santris_count>0) {
+                return $item->santris_count;
+            }
+        });
+        return $jumlah;
+    }
+    public function countSantriByKelas()
+    {
+        $kelas = [
+            'nama' => $this->getNamaKelas(),
+            'jumlah' => $this->countSantri()
+        ];
+        return $kelas;
+    }
+
 }

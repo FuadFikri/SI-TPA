@@ -163,10 +163,10 @@
         type: 'doughnut',
         data: {
             datasets: [{
-                data: [40, 60, 22],
-                backgroundColor: ['blue', 'yellow', 'red']
+                data: {{ $kelas['jumlah']}},
+                backgroundColor: ['rgb(255, 72, 72)','rgb(231, 3, 252)','rgb(224, 247, 94)','rgb(105, 88, 252)']
             }],
-            labels: ['Laki-laki', 'Perempuan']
+            labels: {!! $kelas['nama'] !!}
         }
     })
     // end kelas

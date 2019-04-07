@@ -17,10 +17,11 @@ class DashboardController extends Controller
         $this->sekolahService = $sekolahService;
     }
     public function index()
-    {   
+    {   $kelas = $this->kelasService->countSantriByKelas();
         $gender = $this->santriService->countSantriByGender();
-        $sekolah =  $this->sekolahService->getJumlahSantriPerSekolah();
+        $sekolah =  $this->sekolahService->countSantriBySekolah();
         return  view('dashboard', compact  ('sekolah',
-                                            'gender' ));
+                                            'gender',
+                                            'kelas'));
     }
 }
