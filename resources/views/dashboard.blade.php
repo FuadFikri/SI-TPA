@@ -150,7 +150,7 @@
         type: 'doughnut',
         data: {
             datasets: [{
-                data: [40, 60],
+                data: [{{$gender['laki-laki']}}, {{$gender['perempuan']}}],
                 backgroundColor: ['lightblue', 'pink']
             }],
             labels: ['Laki-laki', 'Perempuan']

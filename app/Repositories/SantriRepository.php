@@ -43,5 +43,9 @@ class SantriRepository extends CrudRepository
         return $this->model::where('isActive',1)->get();
     }
     
+    public function countSantriByGender()
+    {
+        return $this->model::all()->groupBy('jenis_kelamin');
+    }
 }
 

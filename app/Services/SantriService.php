@@ -50,4 +50,14 @@ class SantriService
     {
         return $this->santriRepository->getAllSantriAktif();
     }
+
+    // output {'laki-laki':4, 'perempuan':3}
+    public function countSantriByGender()
+    {
+        $santri =  $this->santriRepository->countSantriByGender();
+        $jumlah = $santri->map(function($item){
+            return count($item);
+        });
+        return $jumlah;
+    }
 }
