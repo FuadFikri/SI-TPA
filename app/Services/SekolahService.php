@@ -51,7 +51,7 @@ class SekolahService
         });
         return $nama_sekolah;
     }
-    public function getJumlahSantriPerSekolah()
+    public function getJumlahSantri()
     {
         $sekolah =  $this->sekolahRepository->countWithSantri();
         $jumlah = $sekolah->map(function($item,$key){
@@ -60,6 +60,15 @@ class SekolahService
             }
         });
         return $jumlah;
+    }
+
+    public function getJumlahSantriPerSekolah()
+    {
+        $sekolah = [
+            'nama' => $this->getNamaSekolah(),
+            'jumlah' => $this->getJumlahSantri()
+        ];
+        return $sekolah;
     }
 }
     

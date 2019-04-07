@@ -18,10 +18,8 @@ class DashboardController extends Controller
     }
     public function index()
     {
-        $jumlah =  $this->sekolahService->getJumlahSantriPerSekolah();
-        $nama_sekolah =  $this->sekolahService->getNamaSekolah();
+        $sekolah =  $this->sekolahService->getJumlahSantriPerSekolah();
         return  view('dashboard',
-                compact('nama_sekolah',
-                        'jumlah'));
+                compact('sekolah'));
     }
 }

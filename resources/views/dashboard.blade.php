@@ -136,10 +136,10 @@
         type: 'doughnut',
         data: {
             datasets: [{
-                data: {{$jumlah}},
-                backgroundColor: ['rgb(252, 185, 3)', 'rgb(198, 252, 3)', 'rgb(0, 68, 255)','rgb(3, 49, 252)',' rgb(231, 3, 252)','rgb(252, 3, 190)']
+                data: {{$sekolah['jumlah']}},
+                backgroundColor: ['rgb(252, 185, 3)', 'rgb(198, 252, 3)', 'rgb(0, 68, 255)','rgb(221, 63, 63)',' rgb(231, 3, 252)','rgb(252, 3, 190)']
             }],
-            labels: {!!$nama_sekolah!!}
+            labels:{!! $sekolah['nama'] !!}
         }
     })
     // end sekolah
