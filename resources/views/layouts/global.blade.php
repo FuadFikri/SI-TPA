@@ -40,12 +40,12 @@
 <body>
 
     <nav class="navbar navbar-expand p-0">
-     <a class="navbar-brand text-center col-xs-12 col-md-3 col-lg-2 mr-0" href="index.html">Sistem Informasi </a>
+     <a class="navbar-brand text-center col-xs-12 col-md-3 col-lg-2 mr-0" href="index.html">TPA Al-Kariim </a>
       <button class="btn btn-link d-block d-md-none" data-toggle="collapse" data-target="#sidebar-nav" role="button" >
         <span class="oi oi-menu"></span>
       </button>
 
-      <span class="border-light bg-success-lighter  d-none d-md-block w-50 ml-3 mr-2" >
+      <span class="border-light bg-success-lighter  d-none d-md-block w-50 ml-6 mr-2" >
         Lorem ipsum dolor sit amet consectetur,
       </span>
       <div class="dropdown d-none d-md-block">
