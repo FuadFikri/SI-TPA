@@ -62,7 +62,7 @@ class SekolahService
         return $jumlah;
     }
 
-    public function getJumlahSantriPerSekolah()
+    public function countSantriBySekolah()
     {
         $sekolah = [
             'nama' => $this->getNamaSekolah(),
