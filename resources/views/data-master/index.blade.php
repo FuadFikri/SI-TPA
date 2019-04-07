@@ -81,7 +81,7 @@
 </div>
 
 <div class="col-lg-4 col-md-6 mb-2 col-sm-6">
-    <div class="card border-0 shadow-sm bg-success-lightest text-dark">
+    <div class="card border-0 shadow-sm bg-warning-lightest text-dark">
         <div class="card-body">
             <div class="media">
                 <div class="media-body">
@@ -91,7 +91,7 @@
                 <span class="oi oi-basket p-2 fs-9 text-indigo-lighter"></span>
             </div>
         </div>
-        <div class="card-footer border-0 text-center p-1 bg-success">
+        <div class="card-footer border-0 text-center p-1 bg-warning">
             <a href="{{route('user.index')}}" class="text-dark">
                 More info <span class="oi oi-arrow-circle-right"></span>
             </a>
