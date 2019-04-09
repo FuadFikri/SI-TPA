@@ -13,7 +13,7 @@
                         <div class="col-md-6 col-sm-12 ">
                             <h3>{{$santri->nama_lengkap}}</h3>
                             <h5>{{$santri->tgl_lahir}}</h5>
-                            <h5>{{$santri->kelas->nama}}</h5>
+                            <h5>{{ $santri->kelas ? $santri->kelas->nama : 'kelas belum diisi'}}</h5>
                             <h5>{{$santri->sekolah->nama}}</h5>
 
                         </div>
