@@ -21,10 +21,11 @@ class DashboardController extends Controller
         $gender = $this->santriService->countSantriByGender();
         $sekolah =  $this->sekolahService->countSantriBySekolah();
         $aktif = $this->santriService->countSantriByIsActive();
-
+        $RT = $this->santriService->countSantriByRT();
         return  view('dashboard', compact  ('sekolah',
                                             'gender',
                                             'kelas',
-                                            'aktif'));
+                                            'aktif',
+                                            'RT'));
     }
 }

@@ -52,5 +52,9 @@ class SantriRepository extends CrudRepository
     {
         return $this->model::all()->groupBy('isActive');
     }
+    public function countSantriByRT()
+    {
+        return $this->model::all()->groupBy('RT');
+    }
 }
 

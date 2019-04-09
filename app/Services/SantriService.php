@@ -69,4 +69,25 @@ class SantriService
         });
         return $jumlah;
     }
+
+    public function countSantriByRT()
+    {
+        $santri =  $this->santriRepository->countSantriByRT();
+
+        $rtHaveSantri = $santri->map(function($item){
+                return count($item);
+        }); 
+
+        $index = $rtHaveSantri->keys();
+        for ($i=1; $i < 14; $i++) { 
+            $jumlahSantriPerRT[$i] = 0;
+        }
+        for ($i=0; $i < sizeof($index); $i++) { 
+            $jumlahSantriPerRT[$index[$i]] = $rtHaveSantri[$index[$i]];
+        }
+        
+
+        return $jumlahSantriPerRT;
+    }
+
 }
