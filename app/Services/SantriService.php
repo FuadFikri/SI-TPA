@@ -60,4 +60,13 @@ class SantriService
         });
         return $jumlah;
     }
+    
+    public function countSantriByIsActive()
+    {
+        $santri =  $this->santriRepository->countSantriByIsActive();
+        $jumlah = $santri->map(function($item){
+            return count($item);
+        });
+        return $jumlah;
+    }
 }

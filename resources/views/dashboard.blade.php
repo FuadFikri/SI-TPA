@@ -164,7 +164,7 @@
         data: {
             datasets: [{
                 data: {{ $kelas['jumlah']}},
-                backgroundColor: ['rgb(255, 72, 72)','rgb(231, 3, 252)','rgb(224, 247, 94)','rgb(105, 88, 252)']
+                backgroundColor: ['rgb(255, 72, 72)','rgb(231, 3, 252)','rgb(226, 255, 62)','rgb(105, 88, 252)']
             }],
             labels: {!! $kelas['nama'] !!}
         }
@@ -176,10 +176,10 @@
         type: 'doughnut',
         data: {
             datasets: [{
-                data: [40, 60],
-                backgroundColor: ['darkgreen', 'lightgreen']
+                data: [{{$aktif[0]}},{{$aktif[1]}}],
+                backgroundColor: ['lightgreen', 'darkgreen']
             }],
-            labels: ['Aktif', 'Tidak Aktif']
+            labels: ['Tidak Aktif', ' Aktif']
         }
     })
     // end kelas
