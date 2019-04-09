@@ -85,7 +85,7 @@
 <script type="text/javascript">
     var ctx = document.getElementById('chartjs-bar');
     var data = {
-        labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "luar"],
+        labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13","14","luar"],
         datasets: [{
             label: 'Jumlah Santri',
             data: [
@@ -101,7 +101,9 @@
                 {{$RT[10]}},
                 {{$RT[11]}},
                 {{$RT[12]}},
-                {{$RT[13]}}
+                {{$RT[13]}},
+                {{$RT[14]}},
+                {{$RT[15]}}
             ],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

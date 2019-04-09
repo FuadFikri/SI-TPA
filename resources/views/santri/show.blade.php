@@ -34,7 +34,7 @@
                             <li>nama panggilan : <b>{{$santri->nama_panggilan}}</b></li>
                             <li>tanggal lahir: <b>{{$santri->tgl_lahir}}</b> </li>
                             <li>{{$santri->jenis_kelamin}} </li>
-                            <li>RT/RW : <b>{{$santri->RT}}/{{$santri->RW}}</b> </li>
+                            <li>RT/RW : <b>{{$santri->RT==15? 'Luar Pogung': $santri->RT}}/{{$santri->RW}}</b> </li>
                             <li>no. rumah : <b>{{$santri->no_rumah}}</b> </li>
                             <li>sekolah di : <b>{{$santri->sekolah != null ? $santri->sekolah->nama : ''}}</b> </li>
                             <li>masuk TPA tahun : <b>{{$santri->tahun_masuk_tpa}}</b> </li>

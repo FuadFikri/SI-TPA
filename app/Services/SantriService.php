@@ -79,7 +79,7 @@ class SantriService
         }); 
 
         $index = $rtHaveSantri->keys();
-        for ($i=1; $i < 14; $i++) { 
+        for ($i=1; $i < 16; $i++) { 
             $jumlahSantriPerRT[$i] = 0;
         }
         for ($i=0; $i < sizeof($index); $i++) { 

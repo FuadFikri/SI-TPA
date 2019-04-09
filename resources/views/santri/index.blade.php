@@ -35,7 +35,7 @@
                         {{$santri->sekolah->nama}}    
                         @endif
                         </td>
-                    <td>{{$santri->RT}}</td>
+                    <td>{{$santri->RT==15? 'Luar Pogung': $santri->RT}}</td>
                     <td>{{$santri->nama_orang_tua}}</td>
                     <td>
                         @if($santri->isActive == 1)

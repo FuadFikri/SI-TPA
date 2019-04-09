@@ -33,9 +33,10 @@
                     <div class="col-md-2 mb-3">
                         <label for="#">RT</label>
                         <select class="form-control" id="" name="RT">
-                            @for ($i = 1; $i < 14; $i++)
+                            @for ($i = 1; $i < 15; $i++)
                                 <option value="{{$i}}">{{$i}}</option>    
                             @endfor
+                            <option value="15">Luar</option>
                         </select>
                     </div>
                     <div class="col-md-2 mb-3">
