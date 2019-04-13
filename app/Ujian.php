@@ -16,4 +16,10 @@ class Ujian extends Model
     {
         return $this->belongsToMany('App\Materi','materi_ujians');
     }
+
+    
+    public function peserta_ujian()
+    {
+        return $this->belongsToMany('App\Santri', 'tes')->orderBy('id','asc');
+    }
 }
