@@ -64,9 +64,17 @@ class SantriService
     public function countSantriByIsActive()
     {
         $santri =  $this->santriRepository->countSantriByIsActive();
-        $jumlah = $santri->map(function($item){
+        $hitung = $santri->map(function($item){
             return count($item);
         });
+        $index = $hitung->keys();
+        $jumlah=[
+            0=>0,
+            1=>0
+        ];
+        for ($i=0; $i < sizeof($index); $i++) { 
+            $jumlah[$index[$i]]= $hitung[$index[$i]];
+        }
         return $jumlah;
     }
 
