@@ -8,6 +8,7 @@ use App\Ujian;
 use App\Tes;
 use App\Materi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UjianController extends Controller
 {
@@ -122,6 +123,22 @@ class UjianController extends Controller
     {
         $hasil = Materi::with('santri_sudah_ujian')->where('id',$request->materi)->first();
         return view('ujian.hasil-per-materi',compact('hasil'));
+    }
+
+    public function cetak_raport(){
+        $ujian = Ujian::find(1);
+        $santris = $ujian->peserta_ujian;
+        // return $santris;
+        $results = DB::table('santris')
+                ->join('tes',       'santris.id','=','tes.santri_id')
+                ->join('materis',   'materis.id','=','tes.materi_id')
+                ->join('kelas',     'kelas.id','=','santris.kelas_id')
+                ->select('santris.id','materis.judul','materis.parameter_kelulusan','tes.nilai','tes.deskripsi','tes.penguji')
+                ->where('tes.ujian_id','=','1')
+                ->orderBy('santris.id','asc')
+                ->distinct()
+                ->get();
+        return view('ujian.cetak-raport',compact('santris','results'));
     }
 
 }
