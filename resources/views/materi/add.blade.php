@@ -24,7 +24,7 @@
                         </div>
                         <br/>
                         <label for="link_materi">referensi materi</label>
-                        <input type="url" name="link_materi" id="link_materi" class="form-control" placeholder="masukan berupa link">
+                        <input type="url" name="link_materi" id="link_materi" class="form-control" placeholder="http://www.google.com">
 
                         <div class="form-group">
                             <label>Kelas TPA</label>

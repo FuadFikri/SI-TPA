@@ -39,7 +39,7 @@
                         </tr>
                         <tr>
                             <td>Tanggal Lahir</td>
-                            <td>{{$santris[$i]->tgl_lahir}}</td>
+                            <td>{{ Carbon\Carbon::parse($santris[$i]->tgl_lahir)->format('d-m-Y') }}</td>
                         </tr>
                         <tr>
                             <td>Kelas</td>
@@ -51,7 +51,7 @@
                         </tr>
                         <tr>
                             <td>RT</td>
-                            <td>{{$santris[$i]->RT}}</td>
+                            <td>{{$santris[$i]->RT==15?'luar pogung':$santris[$i]->RT}}</td>
                         </tr>
 
                     </table>

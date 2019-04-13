@@ -32,7 +32,7 @@
 
                         <ul>
                             <li>nama panggilan : <b>{{$santri->nama_panggilan}}</b></li>
-                            <li>tanggal lahir: <b>{{$santri->tgl_lahir}}</b> </li>
+                            <li>tanggal lahir: <b>{{ Carbon\Carbon::parse($santri->tgl_lahir)->format('d-m-Y') }}</b> </li>
                             <li>{{$santri->jenis_kelamin}} </li>
                             <li>RT/RW : <b>{{$santri->RT==15? 'Luar Pogung': $santri->RT}}/{{$santri->RW}}</b> </li>
                             <li>no. rumah : <b>{{$santri->no_rumah}}</b> </li>
