@@ -3,6 +3,7 @@
 namespace App\Repositories;
 use App\Santri;
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 class SantriRepository extends CrudRepository
 {
     protected $model;
@@ -24,7 +25,8 @@ class SantriRepository extends CrudRepository
                 'nama_orang_tua' => $request->wali,
                 'jenis_kelamin' => $request->jenis_klm,
                 'kelas_id' => $request->kls_tpa,
-                'isActive' => $request->isActive
+                'isActive' => $request->isActive,
+                'added_by' => Auth::user()->name
         ];
         return $data;
     }

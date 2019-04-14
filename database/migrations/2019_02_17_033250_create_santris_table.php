@@ -27,7 +27,7 @@ class CreateSantrisTable extends Migration
             $table->string('nama_orang_tua');
             $table->string('jenis_kelamin');
             $table->integer('isActive')->nullable();
-            $table->integer('isComplete')->nullable();
+            $table->string('added_by')->nullable();
             $table->integer('kelas_id')->unsigned()->nullable();
             $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('set null');
             $table->foreign('sekolah_id')->references('id')->on('sekolahs')->onDelete('set null');

@@ -23,7 +23,7 @@ class santriSeeder extends Seeder
             'nama_orang_tua'=>'joko',
             'jenis_kelamin'=>'laki-laki',
             'isActive' => 1,
-            'isComplete'=>1,
+            'added_by'=>'seeder',
             'kelas_id'=>1
         ]);
     }
