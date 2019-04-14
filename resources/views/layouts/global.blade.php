@@ -46,7 +46,7 @@
       </button>
 
       <span class="border-light bg-success-lighter  d-none d-md-block w-50 ml-6 mr-2" >
-        Lorem ipsum dolor sit amet consectetur,
+      <marquee behavior="slow" direction="">Assalamu'alaikum  {{Auth::user()->name}}</marquee>
       </span>
       <div class="dropdown d-none d-md-block">
         @if(\Auth::user())
@@ -55,8 +55,7 @@
         </button>
         @endif 
         <div class="dropdown-menu dropdown-menu-right" id="navbar-dropdown">
-          <a href="#" class="dropdown-item">Profile</a>
-          <a href="#" class="dropdown-item">Setting</a>
+          {{-- <a href="#" class="dropdown-item">Profile</a> --}}
           <div class="dropdown-divider"></div>
           <li>
             <form action="{{route("logout")}}" method="POST">
@@ -74,27 +73,18 @@
 
             <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
               {{-- <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" /> --}}
-            <li><a href="{{route('dashboard')}}"><span class="oi oi-home"></span> Home</a></li>
-            <li><a href="{{url('data-master')}}"><span class="oi oi-folder"></span>Data Master</a></li>
-            <li><a href="{{route('ujian.index')}}"><span class="oi oi-book"></span> Ujian</a></li>
-            <li><a href="{{url('ustadz')}}"><span class="oi oi-task"></span>Penilaian Ujian</a></li>
-            <li><a href="#"><span class="oi oi-chat"></span> Ruang Srawung</a></li>
 
-              <div class="d-block d-md-none">
-                  <div class="dropdown-divider"></div>
-                  <li><a href="#"> Profile</a></li>
-                  <li><a href="#"> Setting</a></li>
-                  <li>
-                    <form action="{{route("logout")}}" method="POST">
-                      @csrf
-                      <button class="dropdown-item" style="cursor:pointer">Sign Out</button>
-                    </form>
-                  </li>
-              </div>
+              <li><a href="{{route('dashboard')}}"><span class="oi oi-home"></span> Home</a></li>
+              @if (Auth::user()->role=="admin")
+              <li ><a href="{{url('data-master')}}"><span class="oi oi-folder"></span>Data Master</a></li>
+              <li><a href="{{route('ujian.index')}}"><span class="oi oi-book"></span> Ujian</a></li>
+              @endif
+            <li><a href="{{url('santri')}}"><span class="oi oi-list"></span>Data Santri</a></li>
+            <li><a href="{{url('ustadz')}}"><span class="oi oi-task"></span>Penilaian Ujian</a></li>
+            {{-- <li><a href="{{url('ruang-srawung')}}"><span class="oi oi-chat"></span> Ruang Srawung</a></li> --}}
+
             </ul>
-            <div class="pl-3 d-none d-md-block position-fixed" style="bottom: 0px">
-                <span class="oi oi-cog"></span> Setting
-            </div>
+           
         </div>
         <div class="col-lg-10 col-md-9 p-4">
             <div class="row ">

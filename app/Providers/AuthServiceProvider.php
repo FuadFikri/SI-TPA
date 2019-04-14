@@ -10,7 +10,7 @@ class AuthServiceProvider extends ServiceProvider
     /**
      * The policy mappings for the application.
      *
-     * @var array
+     * @var array   
      */
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
@@ -25,6 +25,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Gate::define('manage-data-master', function($user){
+            return $user->role=="admin";
+        });
         //
     }
 }
