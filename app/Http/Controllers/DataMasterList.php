@@ -7,6 +7,7 @@ use App\Services\SekolahService;
 use App\Services\SantriService;
 use App\Services\KelasService;
 use App\Services\MateriService;
+use Illuminate\Support\Facades\Gate;
 class DataMasterList extends Controller
 {
     protected $sekolahService;
@@ -21,6 +22,10 @@ class DataMasterList extends Controller
         $this->santriService = $santriService;
         $this->kelasService = $kelasService;
         $this->materiService = $materiService;
+        $this->middleware(function($request, $next){
+            if(Gate::allows('manage-data-master')) return $next($request);  
+            abort(403, 'Anda tidak memiliki cukup hak akses');});
+        
     }
     public function __invoke(Request $request)
     {

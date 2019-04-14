@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\SekolahService;
 use App\Sekolah;
+use Illuminate\Support\Facades\Gate;
 class SekolahController extends Controller
 {
     protected $sekolahService;
 
     public function __construct(SekolahService $sekolahService){
         $this->sekolahService = $sekolahService;
+        $this->middleware(function($request, $next){
+            if(Gate::allows('manage-data-master')) return $next($request);  
+            abort(403, 'Anda tidak memiliki cukup hak akses');
+        });
     }
 
     public function index()

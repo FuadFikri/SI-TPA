@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Services\MateriService;
 use App\Services\KelasService;
 use App\Materi;
+use Illuminate\Support\Facades\Gate;
 class MateriController extends Controller
 {
     
@@ -16,6 +17,9 @@ class MateriController extends Controller
     {
         $this->materiService = $materiService;
         $this->kelasService = $kelasService;
+        $this->middleware(function($request, $next){
+            if(Gate::allows('manage-data-master')) return $next($request);  
+            abort(403, 'Anda tidak memiliki cukup hak akses');});
     }
     public function index()
     {

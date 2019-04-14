@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\KelasService;
 use App\Kelas;
+use Illuminate\Support\Facades\Gate;
 class KelasController extends Controller
 {
     
@@ -13,6 +14,9 @@ class KelasController extends Controller
     public function __construct(KelasService $kelasService )
     {
         $this->kelasService = $kelasService;
+        $this->middleware(function($request, $next){
+            if(Gate::allows('manage-data-master')) return $next($request);  
+            abort(403, 'Anda tidak memiliki cukup hak akses');});
     }
     public function index()
     {

@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\UserService;
 use App\User;
+use Illuminate\Support\Facades\Gate;
 class UserController extends Controller
 {
     protected $userService;
     public function __construct(UserService $userService){
         $this->userService = $userService;
+        $this->middleware(function($request, $next){
+            if(Gate::allows('manage-data-master')) return $next($request);  
+            abort(403, 'Anda tidak memiliki cukup hak akses');});
     }
     public function index()
     {
