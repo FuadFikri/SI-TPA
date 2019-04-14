@@ -29,7 +29,7 @@
                 <h2 class="fw-bold">{{$jumlah_kelas}}</h2>
                     <h6>Data Kelas</h6>
                 </div>
-                <span class="oi oi-bar-chart p-2 fs-9 text-dark-lighter"></span>
+                <span class="oi oi-task p-2 fs-9 text-dark-lighter"></span>
             </div>
         </div>
         <div class="card-footer border-0 text-center p-1 bg-dark-lighter">
@@ -66,7 +66,7 @@
                     <h2 class="fw-bold">{{$jumlah_materi}}</h2>
                     <h6>Data Materi</h6>
                 </div>
-                <span class="oi oi-basket p-2 fs-9 text-indigo-lighter"></span>
+                <span class="oi oi-book p-2 fs-9 text-indigo-lighter"></span>
             </div>
         </div>
         <div class="card-footer border-0 text-center p-1 bg-info-darker">
@@ -88,7 +88,7 @@
                     <h2 class="fw-bold">{{$jumlah_user-1}}</h2>
                     <h6>Data User Ustadz</h6>
                 </div>
-                <span class="oi oi-basket p-2 fs-9 text-indigo-lighter"></span>
+                <span class="oi oi-people p-2 fs-9 text-indigo-lighter"></span>
             </div>
         </div>
         <div class="card-footer border-0 text-center p-1 bg-warning">
