@@ -9,13 +9,13 @@
     @endif
     <a href="{{route('kelas.create')}}" class="btn btn-lg btn-outline-primary "> Tambah kelas</a>
     <div class="row justify-content-center">
-        <h4>Data</h4>
+        <h4>Data Kelas</h4>
         <table class="table table-hover">
             <thead class="border-0">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">Jenjang</th>
+                    <th scope="col">Ketentuan</th>
                     <th scope="col"></th>
                 </tr>
             </thead>

@@ -9,7 +9,7 @@
     @endif
     <a href="{{route('user.create')}}" class="btn btn-lg btn-outline-primary "> Buat Akun</a>
     <div class="row justify-content-center">
-        <h4>Data</h4>
+        <h4>Data Akun User Ustadz/ Ustadzah</h4>
         <table class="table table-hover">
             <thead class="border-0">
                 <tr>

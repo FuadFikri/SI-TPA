@@ -6,7 +6,7 @@
         <div class="col-lg-9">
             <div class="card">
                 <div class="card-header bg-white pb-1">
-                    <h5 class="">Data Detail</h5>
+                    <h5 class="">Data Detail Ujian</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">

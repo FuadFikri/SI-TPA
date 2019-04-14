@@ -9,7 +9,7 @@
     @endif
     <a href="{{route('sekolah.create')}}" class="btn btn-lg btn-outline-primary "> Tambah Sekolah</a>
     <div class="row justify-content-center">
-        <h4>Data</h4>
+        <h4>Data Sekolah</h4>
         <table class="table table-hover">
             <thead class="border-0">
                 <tr>

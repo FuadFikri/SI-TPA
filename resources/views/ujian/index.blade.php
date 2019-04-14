@@ -9,9 +9,9 @@
         
     @endif
 
-    <a href="{{route('ujian.create')}}" class="btn btn-lg btn-outline-primary "> Input</a>
+    <a href="{{route('ujian.create')}}" class="btn btn-lg btn-outline-primary "> Tambah Ujian</a>
     <div class="row justify-content-center">
-        <h4>Data</h4>
+        <h4>Data Ujian</h4>
         <table class="table table-hover">
             <thead class="border-0">
                 <tr>
