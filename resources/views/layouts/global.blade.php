@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Larashop @yield("title")</title>
+  <title>TPA Al-Kariim</title>
   <link rel="stylesheet" href="{{asset('polished/polished.min.css')}}">
   <link rel="stylesheet" href="{{asset('polished/iconic/css/open-iconic-bootstrap.min.css')}}">
   <link href="{{asset('css/select2.min.css')}}" rel="stylesheet" />
@@ -30,6 +30,18 @@
     hr+.display-3,
     hr+.display-2+.display-3 {
       margin-bottom: 2rem;
+    }
+    .myfooter:hover{
+      color:grey;
+    }
+    .myfooter{
+      color:lightgray;
+    }
+    #myname{
+      color:lightgray;
+    }
+    #myname:hover{
+      color:grey;
     }
   </style>
   <script type="text/javascript">
@@ -100,8 +112,12 @@
             
         </div>
       </div>
-  </div>
->
+
+    </div>
+        <div class="footer text-center bottom text-white-darkest myfooter">
+            &copy; <b>2019</b> Make With <span class="oi oi-heart"></span> by <a href="https:://www.linkedin.com/FuadFikri" id="myname">Fuad Fikri Syamsudin</a>
+        </div>
+
 <script src="{{asset('js/jquery-3.3.1.min.js')}}" crossorigin="anonymous"></script>
 <script src="{{asset('js/popper.min.js')}}" crossorigin="anonymous"></script>
 <script src="{{asset('js/bootstrap.min.js')}}" crossorigin="anonymous"></script>
