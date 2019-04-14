@@ -17,7 +17,6 @@
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Kelas</th>
-                    <th scope="col">Sekolah</th>
                     <th scope="col">RT</th>
                     <th scope="col">Wali</th>
                     <th scope="col">Status Santri</th>
@@ -30,11 +29,6 @@
                     <th>{{$loop->iteration}}</th>
                     <td>{{$santri->nama_panggilan}}</td>
                     <td>{{$santri->kelas != null ? $santri->kelas->nama : ''}}</td>
-                    <td>
-                        @if ($santri->sekolah)
-                        {{$santri->sekolah->nama}}    
-                        @endif
-                        </td>
                     <td>{{$santri->RT==15? 'Luar Pogung': $santri->RT}}</td>
                     <td>{{$santri->nama_orang_tua}}</td>
                     <td>
