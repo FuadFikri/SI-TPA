@@ -20,6 +20,6 @@ class Ujian extends Model
     
     public function peserta_ujian()
     {
-        return $this->belongsToMany('App\Santri', 'tes')->orderBy('id','asc');
+        return $this->belongsToMany('App\Santri', 'tes')->orderBy('id','asc')->distinct();
     }
 }
