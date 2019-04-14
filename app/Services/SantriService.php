@@ -55,10 +55,19 @@ class SantriService
     public function countSantriByGender()
     {
         $santri =  $this->santriRepository->countSantriByGender();
-        $jumlah = $santri->map(function($item){
+        $hitung = $santri->map(function($item){
             return count($item);
         });
+        $index = $hitung->keys();
+        $jumlah=[
+            'perempuan'=>0,
+            'laki-laki'=>0
+        ];
+        for ($i=0; $i < sizeof($index); $i++) { 
+            $jumlah[$index[$i]]= $hitung[$index[$i]];
+        }
         return $jumlah;
+        
     }
     
     public function countSantriByIsActive()
