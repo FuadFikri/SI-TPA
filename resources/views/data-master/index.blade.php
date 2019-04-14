@@ -85,7 +85,7 @@
         <div class="card-body">
             <div class="media">
                 <div class="media-body">
-                    <h2 class="fw-bold">{{$jumlah_materi}}</h2>
+                    <h2 class="fw-bold">{{$jumlah_user-1}}</h2>
                     <h6>Data User Ustadz</h6>
                 </div>
                 <span class="oi oi-basket p-2 fs-9 text-indigo-lighter"></span>
