@@ -11,7 +11,7 @@
 
             </div>
             <p>Pastikan file excel sesuai dengan format dibawah</p>
-            <p> lihat contoh file <a href="#">download</a></p>
+        <p> lihat contoh file <a href="{{url('img_sys/Book1.xlsx')}}">download</a></p>
             <img src="{{url('img_sys/excel.png')}}" alt="" style="width:80%; border:black;">
             <p>===========================================================================</p>
             <div class="container">
