@@ -46,7 +46,7 @@
 $(document).ready(function () {
     $('#materi_ujian').select2({
         ajax: {
-            url: 'http://127.0.0.1:8000/materi/searchMateriAjax',
+            url: '{{url('materi/searchMateriAjax')}}',
             processResults: function (data) {
                 return {
                     results: data.map(function (item) {
