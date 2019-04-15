@@ -115,7 +115,7 @@
 
     </div>
         <div class="footer text-center bottom text-white-darkest myfooter">
-            &copy; <b>2019</b> Make With <span class="oi oi-heart"></span> by <a href="http://www.linkedin.com/FuadFikri" target="_blank" id="myname">Fuad Fikri Syamsudin</a>
+            &copy; <b>2019</b> Make With <span class="oi oi-heart"></span> by <a href="https://www.linkedin.com/in/fuadfikrisyamsudin/" target="_blank" id="myname">Fuad Fikri Syamsudin</a>
         </div>
 
 <script src="{{asset('js/jquery-3.3.1.min.js')}}" crossorigin="anonymous"></script>
