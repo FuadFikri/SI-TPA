@@ -32,8 +32,11 @@ class SantriService
     public function update($request, $id)
     {
         $santriUpdated = $this->santriRepository->update($request, $id);
-        $santriUpdated->url_foto= $this->santriRepository->uploadFoto($request);
-        $santriUpdated->save();
+        if ($request->avatar) {
+            $santriUpdated->url_foto= $this->santriRepository->uploadFoto($request);
+            $santriUpdated->save();
+            return $santriUpdated;
+        }
         return $santriUpdated;
     }
 
