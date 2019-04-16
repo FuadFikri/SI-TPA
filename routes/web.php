@@ -13,6 +13,8 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('santri/import','ExcelController@get_import');
     Route::post('santri/import','ExcelController@post_import');
+    Route::get('santri/export','ExcelController@exportExcel');
+    
     Route::get('materi/searchMateriAjax','MateriController@searchMateriAjax');
     Route::get('lihat-nilai','PenilaianController@hasilUjianPerMateri');
     Route::get('ujian/cetak-raport','PenilaianController@cetak_raport');

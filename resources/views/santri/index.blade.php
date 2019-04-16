@@ -9,9 +9,10 @@
     @endif
     <a href="{{route('santri.create')}}" class="btn btn-lg btn-outline-primary "> Input</a>
     <a href="{{url('santri/import')}}" class="btn btn-lg btn-light"> Import </a>
+    <a href="{{url('santri/export')}}" class="btn btn-lg btn-light"> Export </a>
     <div class="row justify-content-center">
-        <h4>Data</h4>
-        <table class="table table-hover">
+        <h4>Data Santri</h4>
+        <table class="table table-hover table-responsive">
             <thead class="border-0">
                 <tr>
                     <th scope="col">#</th>

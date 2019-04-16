@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Box\Spout\Reader\ReaderFactory;
-use Box\Spout\Reader\WriterFactory;
+use Box\Spout\Writer\WriterFactory;
 use Box\Spout\Common\Type;
 use App\Santri;
 class ExcelController extends Controller
@@ -57,5 +57,27 @@ class ExcelController extends Controller
         $tanggal = date_create($row);
         $formated = date_format($tanggal, 'Y-m-d');
         return $formated;
+    }
+
+    public function exportExcel()
+    {
+        $title =    ['id','nama_lengkap','nama_panggilan','tgl_lahir','RT','RW','no_rumah', 'url_foto','sekolah_id',
+                    'tahun_masuk_tpa','nama_orang_tua','jenis_kelamin','aktif','added_by','kelas_id','created_at','updated_at'];
+        
+        $fileName = 'Data Santri Exported SI-TPA.xlsx';
+
+        $writer = WriterFactory::create(Type::XLSX);
+
+        $santris = Santri::all();
+
+        $writer->openToBrowser($fileName); //stream data directly to the browser
+
+        $writer->addRow($title); //add title at first line
+
+        foreach ($santris as $idx => $data) {
+            $writer->addRow($data->toArray());  //tambahkan data perbaris
+        }
+        $writer->close();
+
     }
 }
