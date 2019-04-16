@@ -39,6 +39,7 @@
             </form>
         </div>
     </div>
+</div>
     @endsection
     @section('footer-scripts')
     <link href="{{asset('css/select2.min.css')}}" rel="stylesheet" />

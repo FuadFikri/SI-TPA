@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <div class="row">
                         @if ($santri->url_foto)
-                        <img src="{{asset('storage/'.$santri->url_foto)}}" class="w-50 mb-2">
+                        <img src="{{asset('storage/'.$santri->url_foto)}}" >
                         @else
                         <div class="col-lg-3">
 
