@@ -26,9 +26,7 @@ class UjianController extends Controller
     }
     public function index()
     {
-        $daftar_ujian = Ujian::where('id', '>' ,0 )
-                                ->orderBy('created_at','desc')
-                                ->paginate(5);
+       $daftar_ujian = $this->ujianService->getAll();
         return view('ujian.index',compact('daftar_ujian'));
     }
 

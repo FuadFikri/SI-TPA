@@ -21,4 +21,12 @@ class UserRepository extends CrudRepository{
         ];
         return $data;
     }
+
+    public function index()
+    {
+        $daftar_user = User::where('id', '>' ,0 )
+                        ->orderBy('name','asc')
+                        ->paginate(5);
+        return $daftar_user;
+    }
 }

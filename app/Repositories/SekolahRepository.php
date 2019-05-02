@@ -20,6 +20,14 @@ class SekolahRepository extends CrudRepository
         return $data;
     }
 
+    
+    public function index(){
+        $daftar_sekolah = $this->model::where('id', '>' ,0 )
+                                ->orderBy('created_at','desc')
+                                ->paginate(5);
+        return $daftar_sekolah;
+    }
+
     public function countWithSantri(){
         return $this->model::whereHas('santris')->withCount('santris')->get();
     }

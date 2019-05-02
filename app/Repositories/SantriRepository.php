@@ -41,12 +41,18 @@ class SantriRepository extends CrudRepository
         
     }
 
-    public function getAllSantriAktif(){
+    public function index() {
+        $daftar_santri = $this->model::where('id', '>' ,0 )
+                        ->orderBy('nama_panggilan','asc')
+                        ->paginate(5);
+        return $daftar_santri;
+    }
+
+    public function getAllSantriAktif() {
         return $this->model::where('isActive',1)->get();
     }
     
-    public function countSantriByGender()
-    {
+    public function countSantriByGender() {
         return $this->model::all()->groupBy('jenis_kelamin');
     }
 

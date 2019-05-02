@@ -17,9 +17,7 @@ class UserController extends Controller
     }
     public function index()
     {
-        $daftar_user = User::where('id', '>' ,0 )
-                        ->orderBy('name','asc')
-                        ->paginate(5);
+        $daftar_user = $this->userService->getAll();
         return view('user.index', compact('daftar_user'));
     }
 

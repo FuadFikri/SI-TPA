@@ -11,6 +11,14 @@ class UjianRepository extends CrudRepository
     {
         $this->model = $ujian;
     }
+
+    // override
+    public function index() {
+        $daftar_ujian = Ujian::where('id', '>' ,0 )
+                        ->orderBy('created_at','desc')
+                        ->paginate(5);
+        return $daftar_ujian;
+    }
     
     public function data($request)
     {

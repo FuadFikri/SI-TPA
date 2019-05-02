@@ -23,9 +23,7 @@ class MateriController extends Controller
     }
     public function index()
     {
-        $daftar_materi = Materi::where('id' , '>', 0)
-                                ->orderBy('created_at','desc') 
-                                ->paginate(5);
+        $daftar_materi = $this->materiService->getAll();
         return view('materi.index', compact('daftar_materi'));
     }
 
@@ -46,7 +44,6 @@ class MateriController extends Controller
     public function show($id)
     {
         $materi = $this->materiService->showDetail($id);
-        // dd($materi);
         return view('materi.show',compact('materi'));
     }
 

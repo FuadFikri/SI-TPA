@@ -24,9 +24,7 @@ class SantriController extends Controller
     }
     public function index()
     {
-        $daftar_santri = Santri::where('id', '>' ,0 )
-                        ->orderBy('nama_panggilan','asc')
-                        ->paginate(5);
+        $daftar_santri =  $this->santriService->getAll();
         return view('santri.index', compact('daftar_santri'));
     }
 

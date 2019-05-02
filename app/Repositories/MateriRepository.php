@@ -23,6 +23,15 @@ class MateriRepository extends CrudRepository{
         return $data;
     }
 
+    public function index() 
+    {
+        $daftar_materi = Materi::where('id' , '>', 0)
+                                ->orderBy('created_at','desc') 
+                                ->paginate(5);
+
+        return $daftar_materi;
+    }
+
     public function materiUjianByKelas($kelas_id)
     {
         return $this->model::where('kelas_id',$kelas_id)->get();

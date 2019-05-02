@@ -20,9 +20,7 @@ class SekolahController extends Controller
 
     public function index()
     {
-        $daftar_sekolah = Sekolah::where('id', '>' ,0 )
-                                ->orderBy('created_at','desc')
-                                ->paginate(5);
+        $daftar_sekolah = $this->sekolahService->getAll();
         return view('sekolah.index', compact('daftar_sekolah'));
     }
 
